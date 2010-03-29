@@ -1,0 +1,41 @@
+-- Revision of last commit: $Rev$
+-- Author                 : $Author$
+-- Date                   : $Date$
+
+\echo Un-installing Release Management component...
+
+set search_path to rlm, public;
+
+\echo Dropping stored function register_release
+drop function if exists rlm.register_release();
+
+\echo Dropping stored function mark_release_complete
+drop function if exists rlm.mark_release_complete();
+
+\echo Dropping stored function register_component
+drop function if exists rlm.register_component
+  ( p_component_type_code  char(3)
+  , p_component_name       text
+  , p_revision             text
+  );
+
+\echo Dropping stored function component_registered
+drop function if exists rlm.component_registered ( p_component_name  text );
+
+\echo Dropping table db_release_components
+drop table if exists rlm.db_release_components cascade;
+
+\echo Dropping table db_releases
+drop table if exists rlm.db_releases cascade;
+
+\echo Dropping RLM related domains...
+
+\echo Dropping domain component_type
+drop domain if exists component_type;
+
+\echo RLM related Domains dropped
+
+\echo Dropping Release Management schema
+drop schema if exists rlm cascade;
+
+\echo Release Management component un-installed

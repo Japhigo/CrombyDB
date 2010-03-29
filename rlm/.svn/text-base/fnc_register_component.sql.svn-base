@@ -1,0 +1,67 @@
+-- Revision of last commit: $Rev$
+-- Author                 : $Author$
+-- Date                   : $Date$
+
+\echo Creating function register_component
+
+create or replace function rlm.register_component
+    ( p_component_type_code  char(3)
+    , p_component_name       varchar(255)
+    , p_revision             varchar(30)
+    )
+    returns void
+as $$
+  declare
+
+    v_component_id       int;
+    v_component_version  int;
+    v_db_release_id      int;
+    v_length             int;
+    v_temp_rev           varchar(30);
+
+    c_drl cursor
+    for
+      select id
+	    from rlm.db_releases
+	   order by id desc;
+
+  begin
+
+    select char_length ( p_revision ) into v_length;
+    if v_length < 6
+    then
+      -- Script not under version control yet
+      v_temp_rev := '-1';
+    else
+      -- Extract the actual number from the revision tag and convert it to an integer
+      --select substring ( p_revision from E'\s([0-9]*)' ) into v_temp_rev;
+      select substring ( p_revision from 7 ) into v_temp_rev;
+      select char_length ( v_temp_rev ) into v_length;
+      select substring ( v_temp_rev for v_length - 2 ) into v_temp_rev;
+    end if;
+
+    select cast ( v_temp_rev as integer ) into v_component_version;
+
+    open c_drl;
+    fetch c_drl into v_db_release_id;
+    close c_drl;
+
+    insert into rlm.db_release_components
+	  ( db_release_id
+	  , component_type_code
+	  , component_name
+	  , component_version
+	  , installed_by
+      )
+    values
+	  ( v_db_release_id
+	  , p_component_type_code
+	  , p_component_name
+	  , v_component_version
+      , session_user
+      );
+
+  end;
+$$ language plpgsql;
+
+
