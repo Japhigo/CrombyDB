@@ -1,4 +1,4 @@
-\qecho Creating view genders
+\qecho Creating view on marital_statuses
 
 select rlm.register_component ( 'PUB', 'viw_marital_statuses.sql' );
 

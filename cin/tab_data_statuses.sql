@@ -3,7 +3,7 @@
 select rlm.register_component ( 'CIN', 'tab_data_statuses.sql' );
 
 create table cin.data_statuses
-  ( code                            int                    not null primary key
+  ( code                            smallint               not null primary key
   , description                     varchar(255)           not null
   , created_by                      varchar(30)            not null default session_user
   , created_date_time               timestamp              not null default current_timestamp

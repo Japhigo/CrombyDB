@@ -1,4 +1,4 @@
-\o cinpams_install.log
+\o cromby_install.log
 
 select current_timestamp;
 
