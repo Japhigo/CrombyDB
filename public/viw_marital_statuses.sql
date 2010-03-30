@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_marital_statuses.sql' );
 
-create or replace view public.marital_statuses
+create or replace view public.view_marital_statuses
 as
   select mas.id
         ,mas.marital_status

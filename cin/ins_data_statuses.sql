@@ -6,7 +6,8 @@ insert into cin.data_statuses ( code, description ) values ( -1, 'Redundant' );
 insert into cin.data_statuses ( code, description ) values ( 0, 'Restored' );
 insert into cin.data_statuses ( code, description ) values ( 1, 'Created' );
 insert into cin.data_statuses ( code, description ) values ( 2, 'Updated' );
-
+insert into cin.data_statuses ( code, description ) values ( 3, 'Updated since restoration' );
+	
 select rlm.component_registered ( 'ind_data_statuses.sql' );
 
 \qecho data_statuses inserted

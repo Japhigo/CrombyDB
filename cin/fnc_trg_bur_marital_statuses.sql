@@ -10,6 +10,10 @@ as $bur_marital_statuses$
     then
       new.data_status_code := 0;
     
+    elsif old.data_status_code = 0
+    then
+      new.data_status_code := 3;
+
     elsif old.data_status_code = 1
     then
       new.data_status_code := 2;
