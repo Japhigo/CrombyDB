@@ -26,7 +26,7 @@ create schema cin;
 
 \i tab_business_types.sql
 
---\i tab_communication_languages.sql
+\i tab_communication_languages.sql
 
 --\i tab_contact_point_usage_types.sql
 
@@ -124,6 +124,8 @@ create schema cin;
 
 \i trg_bur_business_types.sql
 
+\i trg_bur_communication_languages.sql
+
 \i trg_bur_marital_statuses.sql
 
 --
@@ -133,6 +135,8 @@ create schema cin;
 \i ins_data_statuses.sql
 
 \i ins_business_types.sql
+
+\i ins_communication_languages.sql
 
 \i ins_marital_statuses.sql
 

@@ -10,6 +10,8 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_marital_statuses.sql
 
+\i viw_communication_languages.sql
+
 select rlm.component_registered ( 'public.sql' );
 
 \qecho Public component installed
