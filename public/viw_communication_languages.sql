@@ -17,7 +17,7 @@ as
         ,col.updated_date_time
         ,col.data_status_code
         ,das.description as data_status_desc
-    from cin.communication_languages col join cin.data_statuses das on mas.data_status_code = das.code
+    from cin.communication_languages col join cin.data_statuses das on col.data_status_code = das.code
    where data_status_code != -1;
 
 select rlm.component_registered ( 'viw_communication_languages.sql' );

@@ -1,3 +1,13 @@
+\echo   CCCCC    RRRRRRR        OOOOO    MMM   MMM   BBBBBBB    YYY   YYY
+\echo  CCCCCCC   RRRRRRRR      OOOOOOO   MMMM MMMM   BBBBBBBB    YYY YYY
+\echo CCCCCCCCC  RRRRRRRRR    OOOOOOOOO  MMMMMMMMM   BBB   BBB    VVYVV
+\echo CCC        RRR   RRR    OOO   OOO  MMM M MMM   BBB   BB      YYY
+\echo CCC        RRR   RRR    OOO   OOO  MMM   MMM   BBBBBBB       YYY
+\echo CCC        RRRRRRRR     OOO   OOO  MMM   MMM   BBB   BB      YYY
+\echo CCCCCCCCC  RRR   RRR    OOOOOOOOO  MMM   MMM   BBB   BBB     YYY
+\echo  CCCCCCC   RRR    RRR    OOOOOOO   MMM   MMM   BBBBBBBB      YYY
+\echo   CCCCC    RRR     RRR    OOOOO    MMM   MMM   BBBBBBB       YYY
+
 \o cromby_install.log
 
 select current_timestamp;

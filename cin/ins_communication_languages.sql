@@ -355,7 +355,6 @@ insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_n
 insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'pra','','','Prakrit languages','prâkrit, langues');
 insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'pro','','','Provençal, Old (to 1500)','provençal ancien (jusqu''à 1500)');
 insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'pus','','ps','Pushto; Pashto','pachto');
-insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'qaa-qtz','','','Reserved for local use','réservée à l''usage local');
 insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'que','','qu','Quechua','quechua');
 insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'raj','','','Rajasthani','rajasthani');
 insert into cin.communication_languages ( code_a3b, code_a3t, code_a2, english_name, french_name ) values ( 'rap','','','Rapanui','rapanui');
@@ -493,4 +492,4 @@ commit;
 
 select rlm.component_registered ( 'ins_communication_lanuages.sql' );
 
-\qecho 639-2 Language codes inserted
+\qecho ISO 639-2 Language codes inserted
