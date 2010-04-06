@@ -30,7 +30,7 @@ create schema cin;
 
 \i tab_contact_point_usage_types.sql
 
---\i tab_countries.sql
+\i tab_countries.sql
 
 --\i tab_employment_statuses.sql
 
@@ -128,6 +128,8 @@ create schema cin;
 
 \i trg_bur_contact_point_usage_types.sql
 
+\i trg_bur_countries.sql
+
 \i trg_bur_marital_statuses.sql
 
 --
@@ -141,6 +143,8 @@ create schema cin;
 \i ins_communication_languages.sql
 
 \i ins_contact_point_usage_types.sql
+
+\i ins_countries.sql
 
 \i ins_marital_statuses.sql
 

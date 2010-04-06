@@ -12,6 +12,8 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_contact_point_usage_types.sql
 
+\i viw_countries.sql
+
 \i viw_marital_statuses.sql
 
 select rlm.component_registered ( 'public.sql' );

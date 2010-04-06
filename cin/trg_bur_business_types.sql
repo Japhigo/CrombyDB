@@ -1,4 +1,4 @@
-\qecho Creating BUR trigger for marital_statuses
+\qecho Creating BUR trigger for business_types
 
 select rlm.register_component ( 'CIN', 'trg_bur_business_types.sql' );
 
