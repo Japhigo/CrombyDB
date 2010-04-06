@@ -8,9 +8,11 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_business_types.sql
 
-\i viw_marital_statuses.sql
-
 \i viw_communication_languages.sql
+
+\i viw_contact_point_usage_types.sql
+
+\i viw_marital_statuses.sql
 
 select rlm.component_registered ( 'public.sql' );
 
