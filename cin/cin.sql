@@ -32,9 +32,9 @@ create schema cin;
 
 \i tab_countries.sql
 
---\i tab_employment_statuses.sql
+\i tab_employment_statuses.sql
 
---\i tab_event_role_types
+\i tab_event_role_types
 
 --\i tab_event_statuses
 
@@ -130,6 +130,10 @@ create schema cin;
 
 \i trg_bur_countries.sql
 
+\i trg_bur_employment_statuses.sql
+
+\i trg_bur_event_role_types.sql
+
 \i trg_bur_marital_statuses.sql
 
 --
@@ -145,6 +149,10 @@ create schema cin;
 \i ins_contact_point_usage_types.sql
 
 \i ins_countries.sql
+
+\i ins_employment_statuses.sql
+
+\i ins_event_role_types.sql
 
 \i ins_marital_statuses.sql
 
