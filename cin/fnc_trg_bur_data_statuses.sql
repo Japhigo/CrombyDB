@@ -22,6 +22,11 @@ as $bur_data_statuses$
 
     new.updated_date_time := current_timestamp;
 
+    if new.updated_by is null
+    then
+      new.updated_by := session_user;
+    end if;
+
     return new;
 
   end;

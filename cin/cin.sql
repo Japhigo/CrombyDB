@@ -48,7 +48,7 @@ create schema cin;
 
 \i tab_marital_statuses.sql
 
---\i tab_match_statuses.sql
+\i tab_match_statuses.sql
 
 --\i tab_party_classifications.sql
 
@@ -110,7 +110,9 @@ create schema cin;
 
 --\i idx_postal_addresses.sql
 
---\i idx_marital_statuses.sql
+\i idx_marital_statuses.sql
+
+\i idx_match_statuses.sql
 
 --
 -- functions
@@ -136,6 +138,8 @@ create schema cin;
 
 \i trg_bur_marital_statuses.sql
 
+\i trg_bur_match_statuses.sql
+
 --
 -- data population
 --
@@ -155,6 +159,8 @@ create schema cin;
 \i ins_event_role_types.sql
 
 \i ins_marital_statuses.sql
+
+\i ins_match_statuses.sql
 
 select rlm.component_registered ( 'cin.sql' );
 
