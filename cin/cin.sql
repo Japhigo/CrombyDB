@@ -36,35 +36,37 @@ create schema cin;
 
 \i tab_event_role_types
 
---\i tab_event_statuses
+\i tab_event_statuses
 
---\i tab_event_types
+\i tab_event_types
 
---\i tab_flagged_address_reasons.sql
+\i tab_flagged_address_reasons.sql
 
---\i tab_genders.sql
+\i tab_genders.sql
 
---\i tab_legal_classifications.sql
+\i tab_legal_classifications.sql
 
 \i tab_marital_statuses.sql
 
 \i tab_match_statuses.sql
 
---\i tab_party_classifications.sql
+\i tab_occupation_types.sql
 
---\i tab_party_group_types.sql
+\i tab_party_classifications.sql
 
---\i tab_party_role_types.sql
+\i tab_party_group_types.sql
 
---\i tab_party_types.sql
+\i tab_party_role_types.sql
 
---\i tab_postal_address_categories.sql
+\i tab_party_types.sql
 
---\i tab_relationship_priorities.sql
+\i tab_postal_address_categories.sql
 
---\i tab_relationship_statuses.sql
+\i tab_relationship_priorities.sql
 
---\i tab_relationship_types.sql
+\i tab_relationship_statuses.sql
+
+\i tab_relationship_types.sql
 
 --
 -- data tables
@@ -108,11 +110,6 @@ create schema cin;
 -- indexes
 --
 
---\i idx_postal_addresses.sql
-
-\i idx_marital_statuses.sql
-
-\i idx_match_statuses.sql
 
 --
 -- functions

@@ -1,8 +1,8 @@
-\qecho Creating table match_statuses
+\qecho Creating table relationship_priorities
 
-select rlm.register_component ( 'CIN', 'tab_match_statuses.sql' );
+select rlm.register_component ( 'CIN', 'tab_relationship_priorities.sql' );
 
-create table cin.match_statuses
+create table cin.relationship_priorities
   ( id                              serial                 primary key
   , code                            varchar(10)
   , display                         varchar(30)
@@ -15,4 +15,4 @@ create table cin.match_statuses
   , data_status_code                smallint               not null default 1
   );
 
-select rlm.component_registered ( 'tab_match_statuses.sql' );
+select rlm.component_registered ( 'tab_relationship_priorities.sql' );
