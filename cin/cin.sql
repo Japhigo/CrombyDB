@@ -19,10 +19,20 @@ create schema cin;
 \i dom_role_int_ext_type.sql
 
 --
--- reference data tables
+-- Cromby system tables
 --
 
 \i tab_data_statuses.sql
+
+\i tab_ref_data_tables.sql
+
+\i tab_ref_data_loads.sql
+
+\i tab_ref_data_load_rows.sql
+
+--
+-- reference data tables
+--
 
 \i tab_business_types.sql
 
@@ -110,6 +120,7 @@ create schema cin;
 -- indexes
 --
 
+\i idx_ref_data_tables.sql
 
 --
 -- functions
@@ -142,7 +153,7 @@ create schema cin;
 --
 
 \i ins_data_statuses.sql
-
+/*
 \i ins_business_types.sql
 
 \i ins_communication_languages.sql
@@ -158,6 +169,12 @@ create schema cin;
 \i ins_marital_statuses.sql
 
 \i ins_match_statuses.sql
+*/
+--
+-- Database comments
+--
+
+\i doc_cin.sql
 
 select rlm.component_registered ( 'cin.sql' );
 
