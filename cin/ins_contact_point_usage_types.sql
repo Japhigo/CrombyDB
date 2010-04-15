@@ -3,8 +3,8 @@
 select rlm.register_component ( 'CIN', 'ins_contact_point_usage_types.sql' );
 
 begin;
-insert into cin.contact_point_usage_types ( contact_point_usage_type, description ) values ( 'PRIVATE','Private' );
-insert into cin.contact_point_usage_types ( contact_point_usage_type, description ) values ( 'BUSINESS','Business' );
+insert into cin.contact_point_usage_types ( display, available ) values ( 'Private', true );
+insert into cin.contact_point_usage_types ( display, available ) values ( 'Business', true );
 commit;
 
 select rlm.component_registered ( 'ins_contact_point_usage_types.sql' );
