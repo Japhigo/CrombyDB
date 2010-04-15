@@ -58,7 +58,7 @@ values
 \cd ..
 \qecho Components installed
 
-\i permissions.sql
+--\i permissions.sql
 
 \qecho Cleaning up
 
@@ -68,8 +68,8 @@ select rlm.mark_release_complete();
 
 \qecho displaying installed components
 
-select * from rlm.db_releases_v;
+select * from view_db_releases;
 
-select * from rlm.db_release_components_v order by start_date_time;
+select * from view_db_release_components order by start_date_time;
 
 \qecho Install finished

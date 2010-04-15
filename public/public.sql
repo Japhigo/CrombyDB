@@ -20,11 +20,11 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_employment_statuses.sql
 
-\i viw_event_role_types
+\i viw_event_role_types.sql
 
-\i viw_event_statuses
+\i viw_event_statuses.sql
 
-\i viw_event_types
+\i viw_event_types.sql
 
 \i viw_flagged_address_reasons.sql
 

@@ -22,6 +22,4 @@ select rlm.register_release();
 
 \i fnc_component_registered.sql
 
-\i fnc_current_version.sql
-
 \qecho Release Management component installed

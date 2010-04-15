@@ -44,11 +44,11 @@ create schema cin;
 
 \i tab_employment_statuses.sql
 
-\i tab_event_role_types
+\i tab_event_role_types.sql
 
-\i tab_event_statuses
+\i tab_event_statuses.sql
 
-\i tab_event_types
+\i tab_event_types.sql
 
 \i tab_flagged_address_reasons.sql
 
@@ -132,49 +132,49 @@ create schema cin;
 -- triggers
 --
 
-\i trg_business_types.sql
+\i trg_bur_business_types.sql
 
-\i trg_communication_languages.sql
+\i trg_bur_communication_languages.sql
 
-\i trg_contact_point_usage_types.sql
+\i trg_bur_contact_point_usage_types.sql
 
-\i trg_countries.sql
+\i trg_bur_countries.sql
 
-\i trg_employment_statuses.sql
+\i trg_bur_employment_statuses.sql
 
-\i trg_event_role_types
+\i trg_bur_event_role_types
 
-\i trg_event_statuses
+\i trg_bur_event_statuses
 
-\i trg_event_types
+\i trg_bur_event_types
 
-\i trg_flagged_address_reasons.sql
+\i trg_bur_flagged_address_reasons.sql
 
-\i trg_genders.sql
+\i trg_bur_genders.sql
 
-\i trg_legal_classifications.sql
+\i trg_bur_legal_classifications.sql
 
-\i trg_marital_statuses.sql
+\i trg_bur_marital_statuses.sql
 
-\i trg_match_statuses.sql
+\i trg_bur_match_statuses.sql
 
-\i trg_occupation_types.sql
+\i trg_bur_occupation_types.sql
 
-\i trg_party_classifications.sql
+\i trg_bur_party_classifications.sql
 
-\i trg_party_group_types.sql
+\i trg_bur_party_group_types.sql
 
-\i trg_party_role_types.sql
+\i trg_bur_party_role_types.sql
 
-\i trg_party_types.sql
+\i trg_bur_party_types.sql
 
-\i trg_postal_address_categories.sql
+\i trg_bur_postal_address_categories.sql
 
-\i trg_relationship_priorities.sql
+\i trg_bur_relationship_priorities.sql
 
-\i trg_relationship_statuses.sql
+\i trg_bur_relationship_statuses.sql
 
-\i trg_relationship_types.sql
+\i trg_bur_relationship_types.sql
 
 --
 -- data population
