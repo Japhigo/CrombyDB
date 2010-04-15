@@ -14,11 +14,20 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_countries.sql
 
+\i viw_db_releases.sql
+
+\i viw_db_release_components.sql
+
 \i viw_employment_statuses.sql
 
 \i viw_event_role_types.sql
 
 \i viw_marital_statuses.sql
+
+--
+-- Functions
+--
+\i fnc_current_version.sql
 
 select rlm.component_registered ( 'public.sql' );
 

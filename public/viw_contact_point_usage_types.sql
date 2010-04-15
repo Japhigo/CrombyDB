@@ -5,7 +5,8 @@ select rlm.register_component ( 'PUB', 'viw_contact_point_usage_types.sql' );
 create or replace view public.view_contact_point_usage_types
 as
   select cpu.id
-        ,cpu.contact_point_usage_type
+        ,cpu.code
+        ,cpu.display
         ,cpu.description
         ,cpu.created_by
         ,cpu.created_date_time
@@ -14,6 +15,7 @@ as
         ,cpu.data_status_code
         ,das.description as data_status_desc
     from cin.contact_point_usage_types cpu join cin.data_statuses das on cpu.data_status_code = das.code
-   where data_status_code != -1;
+   where cpu.data_status_code != -1
+     and cpu.available;
 
 select rlm.component_registered ( 'viw_contact_point_usage_types.sql' );
