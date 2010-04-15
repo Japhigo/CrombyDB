@@ -6,7 +6,9 @@ create table cin.ref_data_tables
   ( id                              serial                 not null primary key
   , table_name                      varchar(63)            not null
   , code_mandatory                  boolean                not null default false
-  , code_length                     smallint               not null default 0
+  , code_min_length                 smallint               not null default 0
+  , code_max_length                 smallint               not null default 0
+  , code_format                     varchar(255)
   , display_mandatory               boolean                not null default false
   , description_mandatory           boolean                not null default false
   , created_by                      varchar(30)            not null default session_user

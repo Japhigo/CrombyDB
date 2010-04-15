@@ -7,7 +7,7 @@ create table cin.party_group_types
   , code                            varchar(10)
   , display                         varchar(30)
   , description                     varchar(255)
-  , available_flag                  char(1)                not null default 'N'
+  , available                       boolean                not null default false
   , created_by                      varchar(30)            not null default session_user
   , created_date_time               timestamp              not null default current_timestamp
   , updated_by                      varchar(30)            not null default session_user
