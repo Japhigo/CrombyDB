@@ -3,10 +3,10 @@
 select rlm.register_component ( 'CIN', 'ins_genders.sql' );
 
 begin;
-insert into cin.genders ( code, display, description ) values ( '0', 'Not known', 'Not recorded' );
-insert into cin.genders ( code, display, description ) values ( '1', 'Male', 'Male' );
-insert into cin.genders ( code, display, description ) values ( '2', 'Female', 'Female' );
-insert into cin.genders ( code, display, description ) values ( '9', 'Not specified', 'Indeterminate, unable to be classified' );
+insert into cin.genders ( code, display, description, available ) values ( '0', 'Not known', 'Not recorded', false );
+insert into cin.genders ( code, display, description, available ) values ( '1', 'Male', 'Male', true );
+insert into cin.genders ( code, display, description, available ) values ( '2', 'Female', 'Female', true );
+insert into cin.genders ( code, display, description, available ) values ( '9', 'Not specified', 'Indeterminate, unable to be classified', false );
 commit;
 
 select rlm.component_registered ( 'ins_genders.sql' );
