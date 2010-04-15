@@ -14,15 +14,45 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_countries.sql
 
-\i viw_db_releases.sql
-
 \i viw_db_release_components.sql
+
+\i viw_db_releases.sql
 
 \i viw_employment_statuses.sql
 
-\i viw_event_role_types.sql
+\i viw_event_role_types
+
+\i viw_event_statuses
+
+\i viw_event_types
+
+\i viw_flagged_address_reasons.sql
+
+\i viw_genders.sql
+
+\i viw_legal_classifications.sql
 
 \i viw_marital_statuses.sql
+
+\i viw_match_statuses.sql
+
+\i viw_occupation_types.sql
+
+\i viw_party_classifications.sql
+
+\i viw_party_group_types.sql
+
+\i viw_party_role_types.sql
+
+\i viw_party_types.sql
+
+\i viw_postal_address_categories.sql
+
+\i viw_relationship_priorities.sql
+
+\i viw_relationship_statuses.sql
+
+\i viw_relationship_types.sql
 
 --
 -- Functions

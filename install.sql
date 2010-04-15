@@ -51,9 +51,9 @@ values
 \cd cin
 \i cin.sql
 
---\cd ..
---\cd public
---\i public.sql
+\cd ..
+\cd public
+\i public.sql
 
 \cd ..
 \qecho Components installed
