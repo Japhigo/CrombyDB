@@ -142,11 +142,11 @@ create schema cin;
 
 \i trg_bur_employment_statuses.sql
 
-\i trg_bur_event_role_types
+\i trg_bur_event_role_types.sql
 
-\i trg_bur_event_statuses
+\i trg_bur_event_statuses.sql
 
-\i trg_bur_event_types
+\i trg_bur_event_types.sql
 
 \i trg_bur_flagged_address_reasons.sql
 
