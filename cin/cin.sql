@@ -128,6 +128,8 @@ create schema cin;
 
 \i fnc_trg_bur_data_statuses.sql
 
+\i fnc_trg_bur_aufit.sql
+
 --
 -- triggers
 --
@@ -169,6 +171,8 @@ create schema cin;
 \i trg_bur_party_types.sql
 
 \i trg_bur_postal_address_categories.sql
+
+\i trg_bur_ref_data_tables.sql
 
 \i trg_bur_relationship_priorities.sql
 
