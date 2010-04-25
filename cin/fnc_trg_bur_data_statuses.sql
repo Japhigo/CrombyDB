@@ -20,7 +20,8 @@ as $bur_data_statuses$
 
     end if;
 
-    if new.updated_date_time is null
+    if new.updated_date_time is null or
+       new.updated_date_time = old.updated_date_time
     then
       new.updated_date_time := current_timestamp;
     end if;
