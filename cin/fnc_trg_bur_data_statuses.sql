@@ -6,18 +6,25 @@ create or replace function cin.bur_data_statuses()
   returns trigger
 as $bur_data_statuses$
   begin
-    if old.data_status_code = -1
-    then
-      new.data_status_code := 0;
     
-    elsif old.data_status_code = 0
+    if new.data_status_code is null or
+       new.data_status_code = old.data_status_code
     then
-      new.data_status_code := 3;
+      if old.data_status_code = -1
+      then
+        new.data_status_code := 0;
+    
+      elsif old.data_status_code = 0
+      then
+        new.data_status_code := 3;
 
-    elsif old.data_status_code = 1
-    then
-      new.data_status_code := 2;
-
+      elsif old.data_status_code = 1
+      then
+        new.data_status_code := 2;
+      
+      else
+        new.data_status_code := old.data_status_code;
+      end if;
     end if;
 
     if new.updated_date_time is null or
