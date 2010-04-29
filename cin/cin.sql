@@ -24,6 +24,8 @@ create schema cin;
 
 \i tab_data_statuses.sql
 
+\i tab_data_load_statuses.sql
+
 \i tab_ref_data_tables.sql
 
 \i tab_ref_data_loads.sql
@@ -126,13 +128,67 @@ create schema cin;
 -- functions
 --
 
+\i fnc_trg_bir_data_statuses.sql
+
 \i fnc_trg_bur_data_statuses.sql
 
-\i fnc_trg_bur_aufit.sql
+\i fnc_trg_bir_audit.sql
+
+\i fnc_trg_bur_audit.sql
 
 --
 -- triggers
 --
+
+\i trg_bir_business_types.sql
+
+\i trg_bir_communication_languages.sql
+
+\i trg_bir_contact_point_usage_types.sql
+
+\i trg_bir_countries.sql
+
+\i trg_bir_employment_statuses.sql
+
+\i trg_bir_event_role_types.sql
+
+\i trg_bir_event_statuses.sql
+
+\i trg_bir_event_types.sql
+
+\i trg_bir_flagged_address_reasons.sql
+
+\i trg_bir_genders.sql
+
+\i trg_bir_legal_classifications.sql
+
+\i trg_bir_marital_statuses.sql
+
+\i trg_bir_match_statuses.sql
+
+\i trg_bir_occupation_types.sql
+
+\i trg_bir_party_classifications.sql
+
+\i trg_bir_party_group_types.sql
+
+\i trg_bir_party_role_types.sql
+
+\i trg_bir_party_types.sql
+
+\i trg_bir_postal_address_categories.sql
+
+\i trg_bir_ref_data_tables.sql
+
+\i trg_bir_ref_data_loads.sql
+
+\i trg_bir_ref_data_load_rows.sql
+
+\i trg_bir_relationship_priorities.sql
+
+\i trg_bir_relationship_statuses.sql
+
+\i trg_bir_relationship_types.sql
 
 \i trg_bur_business_types.sql
 
@@ -173,6 +229,10 @@ create schema cin;
 \i trg_bur_postal_address_categories.sql
 
 \i trg_bur_ref_data_tables.sql
+
+\i trg_bur_ref_data_loads.sql
+
+\i trg_bur_ref_data_load_rows.sql
 
 \i trg_bur_relationship_priorities.sql
 

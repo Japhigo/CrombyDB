@@ -7,14 +7,13 @@ create table cin.ref_data_loads
   , ref_data_table_id               int                    not null references cin.ref_data_tables ( id )
   , description                     varchar(255)           not null
   , file_details                    varchar(255)           not null
-  , delimiter                       char(1)                not null default ','
-  , data_load_status_code           smallint               not null default 1
-  , loaded_by                       varchar(30)            not null default session_user
-  , loaded_date_time                timestamp              not null default current_timestamp
-  , validated_by                    varchar(30)
-  , validated_date_time             timestamp
-  , implemented_by                  varchar(30)
-  , implemented_date_time           timestamp
+  , delimiter                       char(1)                not null
+  , errors                          text
+  , created_by                      varchar(30)            not null
+  , created_date_time               timestamp              not null
+  , updated_by                      varchar(30)            not null
+  , updated_date_time               timestamp              not null
+  , data_load_status_code           smallint               not null
   );
 
 select rlm.component_registered ( 'tab_ref_data_loads.sql' );

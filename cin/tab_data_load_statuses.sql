@@ -1,8 +1,8 @@
-\qecho Creating table data_statuses
+\qecho Creating table data_load_statuses
 
-select rlm.register_component ( 'CIN', 'tab_data_statuses.sql' );
+select rlm.register_component ( 'CIN', 'tab_data_load_statuses.sql' );
 
-create table cin.data_statuses
+create table cin.data_load_statuses
   ( code                            smallint               not null primary key
   , description                     varchar(255)           not null
   , created_by                      varchar(30)            not null
@@ -11,4 +11,4 @@ create table cin.data_statuses
   , updated_date_time               timestamp              not null
   );
 
-select rlm.component_registered ( 'tab_data_statuses.sql' );
+select rlm.component_registered ( 'tab_data_load_statuses.sql' );
