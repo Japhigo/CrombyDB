@@ -128,6 +128,8 @@ create schema cin;
 -- functions
 --
 
+\i fnc_trg_bir_ref_data_tables.sql
+
 \i fnc_trg_bir_data_statuses.sql
 
 \i fnc_trg_bur_data_statuses.sql
@@ -245,6 +247,8 @@ create schema cin;
 --
 
 \i ins_data_statuses.sql
+
+\i ins_data_load_statuses.sql
 
 \i ins_ref_data_tables.sql
 
