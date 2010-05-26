@@ -3,6 +3,10 @@
 select rlm.register_component ( 'PUB', 'public.sql' );
 
 --
+-- Tables
+--
+\i tab_logger_entries.sql
+--
 -- Views
 --
 
