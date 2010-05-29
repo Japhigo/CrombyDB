@@ -42,6 +42,10 @@ values
 \i cin.sql
 
 \cd ..
+\cd sec
+\i sec.sql
+
+\cd ..
 \cd public
 \i public.sql
 
