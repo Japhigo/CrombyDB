@@ -7,6 +7,7 @@ create table cin.party_role_types
   , code                            varchar(10)
   , display                         varchar(30)            not null
   , description                     varchar(255)
+  , internal                        boolean                not null
   , available                       boolean                not null
   , created_by                      varchar(30)            not null
   , created_date_time               timestamp              not null

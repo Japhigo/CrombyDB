@@ -11,7 +11,7 @@ create table cin.parties
   , communication_language_id       int                             references cin.communication_languages ( id )
   , party_classification_id         int                             references cin.party_classifications ( id )
   , description                     varchar(255)
-  , internal                        boolean
+  , internal                        boolean                not null
   , created_by                      varchar(30)            not null
   , created_date_time               timestamp              not null
   , updated_by                      varchar(30)            not null

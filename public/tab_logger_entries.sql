@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'CIN', 'tab_logger_entries.sql' );
 
-create table pub.logger_entries
+create table public.logger_entries
   ( log_date                        timestamp
   , logger                          text
   , priority                        varchar(30)

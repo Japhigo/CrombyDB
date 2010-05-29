@@ -1,4 +1,4 @@
-\echo Creating table party_organisations
+\qecho Creating table party_organisations
 
 select rlm.register_component ( 'CIN', 'tab_party_organisations.sql' );
 

@@ -88,17 +88,27 @@ create schema cin;
 
 --\i tab_flagged_addresses.sql
 
---\i tab_parties.sql
+\i tab_parties.sql
+
+\i tab_party_histories.sql
 
 --\i tab_party_groups.sql
 
---\i tab_party_persons.sql
+\i tab_party_persons.sql
 
---\i tab_party_organisations.sql
+\i tab_party_person_histories.sql
 
---\i tab_party_roles.sql
+\i tab_party_organisations.sql
 
---\i tab_party_relationships.sql
+\i tab_party_organisation_histories.sql
+
+\i tab_party_roles.sql
+
+\i tab_party_role_histories.sql
+
+\i tab_party_relationships.sql
+
+\i tab_party_relationship_histories.sql
 
 --\i tab_events.sql
 
