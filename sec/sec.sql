@@ -24,6 +24,7 @@ create schema sec;
 --
 -- indexes
 --
+\i idx_users.sql
 
 --
 -- functions
