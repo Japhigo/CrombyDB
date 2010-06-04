@@ -1,6 +1,6 @@
 \qecho Creating table logger_entries
 
-select rlm.register_component ( 'CIN', 'tab_logger_entries.sql' );
+select rlm.register_component ( 'PUB', 'tab_logger_entries.sql' );
 
 create table public.logger_entries
   ( log_date                        timestamp

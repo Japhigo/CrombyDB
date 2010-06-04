@@ -1,5 +1,7 @@
 \qecho Creating function current_version
 
+select rlm.register_component ( 'PUB', 'fnc_current_version.sql' );
+
 create or replace function public.current_version ()
 	returns varchar(30)
 	security definer
@@ -26,4 +28,4 @@ as $$
   end;
 $$ language plpgsql;
 
-
+select rlm.component_registered ( 'fnc_current_version.sql' );
