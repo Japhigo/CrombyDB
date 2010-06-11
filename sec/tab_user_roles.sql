@@ -5,7 +5,7 @@ select rlm.register_component ( 'SEC', 'tab_user_roles.sql' );
 create table sec.user_roles
   ( id                              serial                 primary key
   , user_id                         int                    not null references sec.users ( id )
-  , system_roles_id                 int                    not null references sec.system_roles ( id )
+  , system_role_id                  int                    not null references sec.system_roles ( id )
   , user_role_start_date            date                   not null
   , user_role_end_date              date
   , created_by                      varchar(30)            not null

@@ -144,6 +144,8 @@ create schema cin;
 
 \i fnc_trg_bur_data_statuses.sql
 
+\i fnc_trg_bur_parties.sql
+
 \i fnc_trg_bir_audit.sql
 
 \i fnc_trg_bur_audit.sql
@@ -251,6 +253,8 @@ create schema cin;
 \i trg_bur_relationship_statuses.sql
 
 \i trg_bur_relationship_types.sql
+
+\i trg_bur_parties.sql
 
 --
 -- data population
