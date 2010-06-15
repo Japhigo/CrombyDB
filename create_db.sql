@@ -6,7 +6,7 @@ create role baron with login password 'baron' createrole;
 -- These are the users used to connect to the database.  You should change these as appropriate, but remember to make
 -- the necessary changes in the configuration of CrombyUM and CrombyAM
 --
-create role am_user with login password 'am_userr';
+create role am_user with login password 'am_user';
 create role um_user with login password 'um_user';
 --
 select * from pg_user;    -- verify user created
