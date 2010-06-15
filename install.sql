@@ -4,6 +4,11 @@ select current_timestamp;
 
 \qecho Installing...
 
+--
+-- Stop users from creating objects in the public schema
+--
+revoke create on schema public from public;
+
 \qecho Creating temporary table to hold release details
 
 create table tmp_release_details
@@ -30,7 +35,6 @@ values
   , 'initial build'
   , 'Database install'
   );
-
 
 \qecho Installing components...
 

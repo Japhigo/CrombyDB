@@ -17,7 +17,3 @@ select * from pg_shadow;  -- sysid listed here
 create database cromby_development owner baron;
 create database cromby_test owner baron; 
 create database cromby_production owner baron;
---
--- Stop users from creating objects in the public schema
---
-revoke create on schema public from public;
