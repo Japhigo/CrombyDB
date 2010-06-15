@@ -1,10 +1,10 @@
-\qecho Creating BUR trigger function for creating party histories
+\qecho Creating BUR trigger function for creating party organisation histories
 
-select rlm.register_component ( 'CIN', 'fnc_trg_bur_parties.sql' );
+select rlm.register_component ( 'CIN', 'fnc_trg_bur_party_organisations.sql' );
 
-create or replace function cin.bur_parties()
+create or replace function cin.bur_party_organisations()
   returns trigger
-as $bur_parties$
+as $bur_party_organisations$
   begin
     
     if new.data_status_code is null or
@@ -38,16 +38,15 @@ as $bur_parties$
       new.updated_by := session_user;
     end if;
 
-    insert into cin.party_histories
-      ( party_id
-      , reference
-      , name
-      , party_object_type_code
-      , party_type_id
-      , communication_language_id
-      , party_classification_id
-      , description
-      , internal
+    insert into cin.party_organisation_histories
+      ( party_organisation_id
+      , company_number
+      , legal_classification_id
+      , business_type_id
+      , vat_registration_number
+      ,	established_date
+      , dissolved_date
+      , tax_exempt_ind
       , created_by
       , created_date_time
       , updated_by
@@ -56,14 +55,13 @@ as $bur_parties$
       )
     values
       ( old.id
-      , old.reference
-      , old.name
-      , old.party_object_type_code
-      , old.party_type_id
-      , old.communication_language_id
-      , old.party_classification_id
-      , old.description
-      , old.internal
+      , old.company_number
+      , old.legal_classification_id
+      , old.business_type_id
+      , old.vat_registration_number
+      ,	old.established_date
+      , old.dissolved_date
+      , old.tax_exempt_ind
       , old.created_by
       , old.created_date_time
       , old.updated_by
@@ -74,6 +72,6 @@ as $bur_parties$
     return new;
 
   end;
-$bur_parties$ LANGUAGE plpgsql;
+$bur_party_organisations$ LANGUAGE plpgsql;
 
-select rlm.component_registered ( 'fnc_trg_bur_parties.sql' );
+select rlm.component_registered ( 'fnc_trg_bur_party_organisations.sql' );

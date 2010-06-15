@@ -37,8 +37,8 @@ create schema sec;
 --
 -- data population
 --
-
-
+\i ins_system_roles.sql
+ 
 --
 -- Database comments
 --

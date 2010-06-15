@@ -17,7 +17,7 @@ create table cin.party_persons
   , gender_code                     smallint                        references cin.genders ( id )
   , birth_date                      date
   , death_date                      date
-  , nationality                     int                             references cin.countries ( id )
+  , nationality_id                  int                             references cin.countries ( id )
   , children_count                  smallint
   , employment_status_id            int                             references cin.employment_statuses ( id )
   , tax_identifier                  varchar(40)

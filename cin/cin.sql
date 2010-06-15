@@ -150,6 +150,10 @@ create schema cin;
 
 \i fnc_trg_bur_parties.sql
 
+\i fnc_trg_bur_party_organisations.sql
+
+\i fnc_trg_bur_party_persons.sql
+
 --
 -- triggers
 --
@@ -206,6 +210,10 @@ create schema cin;
 
 \i trg_bir_parties.sql
 
+\i trg_bir_party_organisations.sql
+
+\i trg_bir_party_persons.sql
+
 \i trg_bur_business_types.sql
 
 \i trg_bur_communication_languages.sql
@@ -257,6 +265,10 @@ create schema cin;
 \i trg_bur_relationship_types.sql
 
 \i trg_bur_parties.sql
+
+\i trg_bur_party_organisations.sql
+
+\i trg_bur_party_persons.sql
 
 --
 -- data population
