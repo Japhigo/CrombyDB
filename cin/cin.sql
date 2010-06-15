@@ -138,17 +138,17 @@ create schema cin;
 -- functions
 --
 
-\i fnc_trg_bir_ref_data_tables.sql
+\i fnc_trg_bir_audit.sql
 
 \i fnc_trg_bir_data_statuses.sql
+
+\i fnc_trg_bir_ref_data_tables.sql
+
+\i fnc_trg_bur_audit.sql
 
 \i fnc_trg_bur_data_statuses.sql
 
 \i fnc_trg_bur_parties.sql
-
-\i fnc_trg_bir_audit.sql
-
-\i fnc_trg_bur_audit.sql
 
 --
 -- triggers
@@ -203,6 +203,8 @@ create schema cin;
 \i trg_bir_relationship_statuses.sql
 
 \i trg_bir_relationship_types.sql
+
+\i trg_bir_parties.sql
 
 \i trg_bur_business_types.sql
 

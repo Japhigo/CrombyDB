@@ -21,14 +21,14 @@ insert into tmp_release_details
   , minor_id
   , sub_id
   , description
-  , release_notes_url
+  , release_notes
   )
 values
   ( 0
   , 0
   , 1
   , 'initial build'
-  , 'idoru.local'
+  , 'Database install'
   );
 
 

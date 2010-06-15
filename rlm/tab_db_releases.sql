@@ -6,7 +6,7 @@ create table rlm.db_releases
   , minor_id           smallint      not null
   , sub_id             smallint      not null
   , description        varchar(255)  not null
-  , release_notes_url  varchar(255)  not null
+  , release_notes      text          not null
   , installed_by       varchar(30)   not null
   , start_date_time    timestamp     not null  default current_timestamp
   , end_date_time      timestamp
