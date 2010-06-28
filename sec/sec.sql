@@ -29,10 +29,14 @@ create schema sec;
 --
 -- functions
 --
+\i fnc_trg_bir_users.sql
+
+\i fnc_trg_sec_audit.sql
 
 --
 -- triggers
 --
+\i trg_bir_users.sql
 
 --
 -- data population

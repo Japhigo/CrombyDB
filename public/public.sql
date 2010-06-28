@@ -7,6 +7,8 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 --
 \i tab_logger_entries.sql
 
+\i tab_sessions.sql
+
 --
 -- Views
 --
