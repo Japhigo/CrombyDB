@@ -31,12 +31,28 @@ create schema sec;
 --
 \i fnc_trg_bir_users.sql
 
-\i fnc_trg_sec_audit.sql
+\i fnc_trg_bir_sec_audit.sql
+
+\i fnc_trg_bur_sec_audit.sql
 
 --
 -- triggers
 --
 \i trg_bir_users.sql
+
+\i trg_bir_system_roles.sql
+
+\i trg_bir_user_roles.sql
+
+\i trg_bir_default_roles.sql
+
+\i trg_bur_users.sql
+
+\i trg_bur_system_roles.sql
+
+\i trg_bur_user_roles.sql
+
+\i trg_bur_default_roles.sql
 
 --
 -- data population

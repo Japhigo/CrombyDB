@@ -1,3 +1,4 @@
+\pset tuples_only
 \o cromby_install.log
 
 select current_timestamp;

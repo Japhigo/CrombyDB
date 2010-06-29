@@ -1,10 +1,10 @@
 \qecho Creating BIR trigger function for users
 
-select rlm.register_component ( 'SEC', 'fnc_trg_bir_audit.sql' );
+select rlm.register_component ( 'SEC', 'fnc_trg_bir_users.sql' );
 
 create or replace function sec.bir_users()
-  security definer
   returns trigger
+  security definer
 as $bir_users$
   begin
 

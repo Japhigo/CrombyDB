@@ -112,6 +112,8 @@ create schema cin;
 
 --\i tab_events.sql
 
+--\i tab_event_logs.sql
+
 --\i tab_event_roles.sql
 
 --\i tab_contact_point_sets.sql

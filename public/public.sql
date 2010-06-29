@@ -70,6 +70,14 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i fnc_authenticate_user.sql
 
+\i fnc_upd_user_password.sql
+
+--
+-- Rules
+--
+
+\i rul_upd_view_users.sql
+
 select rlm.component_registered ( 'public.sql' );
 
 \qecho Public component installed

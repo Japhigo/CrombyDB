@@ -1,13 +1,13 @@
 \qecho Creating view on users
 
-select rlm.register_component ( 'PUB', 'view_users.sql' );
+select rlm.register_component ( 'PUB', 'viw_users.sql' );
 
 create or replace view public.view_users
 as
   select id
         ,party_person_id
         ,user_name
-        ,'' as user_uuid
+        ,user_uuid
         ,'' as hashed_password
         ,salt
         ,password_expiry_date - current_date as days_until_password_expiry
