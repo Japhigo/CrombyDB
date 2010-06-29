@@ -3,7 +3,7 @@
 select rlm.register_component ( 'PUB', 'fnc_authorize_user.sql' );
 
 create or replace function public.authorize_user
-    ( p_user_uid   varchar(36)
+    ( p_user_uid   uuid
     , p_role_name  varchar(30)
     )
     returns boolean
@@ -14,14 +14,14 @@ as $$
     v_dummy  int;
 
     c_usr cursor
-      ( p_user_uid  varchar(36)
+      ( p_user_uid   uuid
       , p_role_name  varchar(30)
       )
     for
       select 1
         from sec.users usr join
              sec.user_roles uro on uro.user_id = usr.id join
-             sec.system_roles syr on syr.id = uro.system_role_id
+             sec.system_roles sro on sro.id = uro.system_role_id
        where usr.user_uid = p_user_uid
          and syr.role_name = p_role_name;
 

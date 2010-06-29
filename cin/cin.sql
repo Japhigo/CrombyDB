@@ -84,15 +84,17 @@ create schema cin;
 -- data tables
 --
 
---\i tab_postal_addresses.sql
+\i tab_postal_addresses.sql
 
---\i tab_flagged_addresses.sql
+\i tab_flagged_addresses.sql
 
 \i tab_parties.sql
 
 \i tab_party_histories.sql
 
---\i tab_party_groups.sql
+\i tab_party_groups.sql
+
+\i tab_party_group_histories.sql
 
 \i tab_party_persons.sql
 
@@ -110,25 +112,25 @@ create schema cin;
 
 \i tab_party_relationship_histories.sql
 
---\i tab_events.sql
+\i tab_events.sql
 
---\i tab_event_logs.sql
+\i tab_event_logs.sql
 
---\i tab_event_roles.sql
+\i tab_event_roles.sql
 
---\i tab_contact_point_sets.sql
+\i tab_contact_point_sets.sql
 
---\i tab_contact_points.sql
+\i tab_contact_points.sql
 
---\i tab_correspondence_addresses.sql
+\i tab_correspondence_addresses.sql
 
---\i tab_email_addresses.sql
+\i tab_email_addresses.sql
 
---\i tab_fax_numbers.sql
+\i tab_fax_numbers.sql
 
---\i tab_telephone_numbers.sql
+\i tab_telephone_numbers.sql
 
---\i tab_website_addresses.sql
+\i tab_website_addresses.sql
 
 --
 -- indexes

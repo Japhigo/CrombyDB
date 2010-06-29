@@ -6,12 +6,12 @@ create or replace function public.authenticate_user
     ( p_user_name  varchar(30)
     , p_password   text
     )
-    returns varchar(36)
+    returns uuid
     security definer
 as $$
   declare
 
-    v_user_uuid        varchar(36);
+    v_user_uuid        uuid;
 
     c_usr cursor
       ( p_user_name  varchar(30)
