@@ -61,6 +61,10 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 
 \i viw_relationship_types.sql
 
+\i viw_employees.sql
+
+\i viw_departments.sql
+
 \i viw_users.sql
 
 --
