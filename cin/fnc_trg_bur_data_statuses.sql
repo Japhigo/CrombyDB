@@ -9,7 +9,7 @@ as $bur_data_statuses$
     
     select cin.calc_data_status_code
       ( old.data_status_code
-	  , new.data_status_code
+      , new.data_status_code
       )
       into new.data_status_code;
 

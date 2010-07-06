@@ -29,7 +29,7 @@ as $$
         l_data_status_code := 2;
       
       else
-        new.data_status_code := p_old_data_status_code;
+        l_data_status_code := p_old_data_status_code;
       end if;
     else
       l_data_status_code := p_new_data_status_code;

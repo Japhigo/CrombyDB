@@ -7,25 +7,11 @@ create or replace function cin.bur_party_organisations()
 as $bur_party_organisations$
   begin
     
-    if new.data_status_code is null or
-       new.data_status_code = old.data_status_code
-    then
-      if old.data_status_code = -1
-      then
-        new.data_status_code := 0;
-    
-      elsif old.data_status_code = 0
-      then
-        new.data_status_code := 3;
-
-      elsif old.data_status_code = 1
-      then
-        new.data_status_code := 2;
-      
-      else
-        new.data_status_code := old.data_status_code;
-      end if;
-    end if;
+    select cin.calc_data_status_code
+      ( old.data_status_code
+      , new.data_status_code
+      )
+      into new.data_status_code;
 
     if new.updated_date_time is null or
        new.updated_date_time = old.updated_date_time
