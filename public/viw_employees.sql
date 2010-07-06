@@ -1,6 +1,6 @@
 \qecho Creating view employees
 
-select rlm.register_component ( 'PUBLIC', 'view_employees.sql' );
+select rlm.register_component ( 'PUB', 'view_employees.sql' );
 
 create or replace view public.view_employees
 as
