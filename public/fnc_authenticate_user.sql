@@ -29,7 +29,7 @@ as $$
       ( p_user_name
 	  , p_password
 	  );
-    fetch c_usr into v_user_uid;
+    fetch c_usr into v_user_uuid;
     close c_usr;
 
     return v_user_uid;

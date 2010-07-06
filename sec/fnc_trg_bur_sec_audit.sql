@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'SEC', 'fnc_trg_bur_sec_audit.sql' );
 
-create or replace function cin.bur_sec_audit()
+create or replace function sec.bur_sec_audit()
   returns trigger
 as $bur_sec_audit$
   begin

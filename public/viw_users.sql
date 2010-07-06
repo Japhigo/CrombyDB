@@ -7,7 +7,7 @@ as
   select id
         ,party_person_id
         ,user_name
-        ,user_uuid
+        ,'' as user_uuid
         ,'' as hashed_password
         ,salt
         ,password_expiry_date - current_date as days_until_password_expiry
