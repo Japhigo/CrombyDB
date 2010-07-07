@@ -32,7 +32,7 @@ as $$
     fetch c_usr into v_user_uuid;
     close c_usr;
 
-    return v_user_uid;
+    return v_user_uuid;
 
   end;
 $$ language plpgsql;
