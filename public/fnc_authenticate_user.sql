@@ -6,19 +6,19 @@ create or replace function public.authenticate_user
     ( p_user_name  varchar(30)
     , p_password   text
     )
-    returns uuid
+    returns boolean
     security definer
 as $$
   declare
 
-    v_user_uuid        uuid;
+    v_dummy  int;
 
     c_usr cursor
       ( p_user_name  varchar(30)
       , p_password   text
       )
     for
-      select user_uuid
+      select 1
         from sec.users
        where user_name = p_user_name
          and p_password = p_password;
@@ -29,10 +29,10 @@ as $$
       ( p_user_name
 	  , p_password
 	  );
-    fetch c_usr into v_user_uuid;
+    fetch c_usr into v_dummy;
     close c_usr;
 
-    return v_user_uuid;
+    return v_dummy = 1;
 
   end;
 $$ language plpgsql;
