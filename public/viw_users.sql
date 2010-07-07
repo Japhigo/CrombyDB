@@ -8,7 +8,6 @@ as
         ,party_person_id
         ,user_name
         ,'' as user_uuid
-        ,'' as hashed_password
         ,salt
         ,password_expiry_date - current_date as days_until_password_expiry
     from sec.users

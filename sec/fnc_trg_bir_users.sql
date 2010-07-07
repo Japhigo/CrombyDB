@@ -8,7 +8,7 @@ create or replace function sec.bir_users()
 as $bir_users$
   begin
 
-    select uuid_generate_v1() into new.uuid;
+    select uuid_generate_v1() into new.user_uuid;
 
     if new.created_date_time is null
     then
@@ -17,7 +17,7 @@ as $bir_users$
 
     if new.created_by is null
     then
-      new.updated_by := session_user;
+      new.created_by := session_user;
     end if;
 
     if new.updated_date_time is null

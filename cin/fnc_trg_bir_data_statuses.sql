@@ -24,7 +24,7 @@ as $bir_data_statuses$
 
     if new.created_by is null
     then
-      new.updated_by := session_user;
+      new.created_by := session_user;
     end if;
 
     if new.created_date_time is null
