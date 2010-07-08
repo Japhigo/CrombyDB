@@ -3,8 +3,9 @@
 select rlm.register_component ( 'PUB', 'fnc_upd_user_password.sql' );
 
 create or replace function public.upd_user_password
-    ( p_hashed_password  text
-    , p_user_uuid        uuid
+    ( p_hash       text
+	, p_salt       text
+    , p_user_uuid  uuid
     )
     returns void
     security definer
@@ -12,7 +13,8 @@ as $$
   begin
 
     update sec.users
-	   set hashed_password = p_hashed_password
+	   set hash = p_hash
+	      ,salt = p_salt
           ,updated_by = user_name
           ,updated_date_time = current_timestamp
      where user_uuid = p_user_uuid;

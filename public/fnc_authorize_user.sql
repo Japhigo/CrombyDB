@@ -6,19 +6,19 @@ create or replace function public.authorize_user
     ( p_user_uid   uuid
     , p_role_name  varchar(30)
     )
-    returns boolean
+    returns varchar(30)
     security definer
 as $$
   declare
 
-    v_dummy  int;
+    v_user_name  varchar(30);
 
     c_usr cursor
       ( p_user_uid   uuid
       , p_role_name  varchar(30)
       )
     for
-      select 1
+      select usr.user_name
         from sec.users usr join
              sec.user_roles uro on uro.user_id = usr.id join
              sec.system_roles sro on sro.id = uro.system_role_id
@@ -31,10 +31,10 @@ as $$
       ( p_user_uid
 	  , p_role_name
 	  );
-    fetch c_usr into v_dummy;
+    fetch c_usr into v_user_name;
     close c_usr;
 
-    return v_dummy = 1;
+    return v_user_name;
 
   end;
 $$ language plpgsql;
