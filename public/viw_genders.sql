@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_genders.sql' );
 
-create or replace view public.view_genders
+create or replace view public.viw_genders
 as
   select gen.id
         ,gen.code

@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'view_employees.sql' );
 
-create or replace view public.view_employees
+create or replace view public.viw_employees
 as
   select pty.id
         ,per.id as person_id

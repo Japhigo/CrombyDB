@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_users.sql' );
 
-create or replace view public.view_users
+create or replace view public.viw_users
 as
   select id
         ,party_person_id

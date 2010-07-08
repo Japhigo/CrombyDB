@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_flagged_address_reasons.sql' );
 
-create or replace view public.view_flagged_address_reasons
+create or replace view public.viw_flagged_address_reasons
 as
   select far.id
         ,far.code

@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_posts.sql' );
 
-create or replace view public.view_posts
+create or replace view public.viw_posts
 as
   select pro.id
         ,pro.party_id

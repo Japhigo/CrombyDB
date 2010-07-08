@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_relationship_statuses.sql' );
 
-create or replace view public.view_relationship_statuses
+create or replace view public.viw_relationship_statuses
 as
   select res.id
         ,res.code

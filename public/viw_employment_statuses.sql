@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_employment_statuses.sql' );
 
-create or replace view public.view_employment_statuses
+create or replace view public.viw_employment_statuses
 as
   select ems.id
         ,ems.code

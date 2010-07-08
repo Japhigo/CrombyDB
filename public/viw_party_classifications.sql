@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_party_classifications.sql' );
 
-create or replace view public.view_party_classifications
+create or replace view public.viw_party_classifications
 as
   select pac.id
         ,pac.code

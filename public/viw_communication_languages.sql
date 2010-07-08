@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_communication_languages.sql' );
 
-create or replace view public.view_communication_languages
+create or replace view public.viw_communication_languages
 as
   select col.id
         ,col.code
