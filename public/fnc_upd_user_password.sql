@@ -13,10 +13,11 @@ as $$
   begin
 
     update sec.users
-	   set hash = p_hash
+	   set hashed_password = p_hash
 	      ,salt = p_salt
           ,updated_by = user_name
           ,updated_date_time = current_timestamp
+          ,password_expiry_date = current_date + 60
      where user_uuid = p_user_uuid;
 
   end;

@@ -14,7 +14,7 @@ as $bir_sec_audit$
 
     if new.created_by is null
     then
-      new.updated_by := session_user;
+      new.created_by := session_user;
     end if;
 
     if new.updated_date_time is null

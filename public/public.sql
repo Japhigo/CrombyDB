@@ -78,7 +78,7 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 -- Rules
 --
 
-\i rul_upd_view_users.sql
+\i rul_upd_viw_users.sql
 
 select rlm.component_registered ( 'public.sql' );
 
