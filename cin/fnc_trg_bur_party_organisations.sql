@@ -13,16 +13,12 @@ as $bur_party_organisations$
       )
       into new.data_status_code;
 
-    if new.updated_date_time is null or
-       new.updated_date_time = old.updated_date_time
-    then
-      new.updated_date_time := current_timestamp;
-    end if;
-
     if new.updated_by is null
     then
       new.updated_by := session_user;
     end if;
+
+    new.updated_date_time := current_timestamp;
 
     insert into cin.party_organisation_histories
       ( party_organisation_id

@@ -7,15 +7,12 @@ create or replace function cin.bur_audit()
 as $bur_audit$
   begin
 
-    if new.updated_date_time is null
-    then
-      new.updated_date_time := current_timestamp;
-    end if;
-
     if new.updated_by is null
     then
       new.updated_by := session_user;
     end if;
+
+    new.updated_date_time := current_timestamp;
 
     return new;
 

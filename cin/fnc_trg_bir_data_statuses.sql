@@ -17,25 +17,18 @@ as $bir_data_statuses$
       new.data_status_code := 1;
     end if;
 
-    if new.created_date_time is null
-    then
-      new.created_date_time := current_timestamp;
-    end if;
-
     if new.created_by is null
     then
       new.created_by := session_user;
-    end if;
-
-    if new.created_date_time is null
-    then
-      new.updated_date_time := current_timestamp;
     end if;
 
     if new.updated_by is null
     then
       new.updated_by := session_user;
     end if;
+
+    new.created_date_time := current_timestamp;
+    new.updated_date_time := current_timestamp;
 
     return new;
 
