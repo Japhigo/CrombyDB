@@ -1,4 +1,3 @@
-\pset tuples_only
 \o cromby_install.log
 
 select current_timestamp;
@@ -13,24 +12,27 @@ revoke create on schema public from public;
 \qecho Creating temporary table to hold release details
 
 create table tmp_release_details
-  ( major_id           smallint      not null
+  ( release_type_code  char(3)       not null
+  , major_id           smallint      not null
   , minor_id           smallint      not null
   , sub_id             smallint      not null
   , description        varchar(255)  not null
-  , release_notes_url  varchar(255)
+  , release_notes      varchar(255)
   );
 
 \qecho Setting up release details
 
 insert into tmp_release_details
-  ( major_id
+  ( release_type_code
+  , major_id
   , minor_id
   , sub_id
   , description
   , release_notes
   )
 values
-  ( 0
+  ( 'INS'
+  , 0
   , 0
   , 1
   , 'initial build'

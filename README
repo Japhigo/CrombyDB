@@ -9,7 +9,7 @@ Instructions (*nix/OS X)
 
 1.  Run create_db as the postgres user to create databases and owner.  You may want to change the owner and/or password first.
 
-2.  Connect to each of the databases using psql as the postgres user and install contrib/uuis-ossp.sql.  Grant execute on uuid_generate_v1() to baron (or whatever username you changed this to in Step 1).
+2.  Connect to each of the databases using psql as the postgres user and install contrib/uuis-ossp.sql.  Grant execute on function uuid_generate_v1() to baron (or whatever username you changed this to in Step 1).
 
 3.  Navigate to the CrombyDB directory, run script or similar to catch session output, then connect to the target database using psql as the owner created in Step 1.
 

@@ -278,35 +278,35 @@ create schema cin;
 -- data population
 --
 
-\i ins_data_statuses.sql
+--\i ins_data_statuses.sql
 
-\i ins_data_load_statuses.sql
+--\i ins_data_load_statuses.sql
 
-\i ins_ref_data_tables.sql
+--\i ins_ref_data_tables.sql
 
 --\i ins_business_types.sql
 
 --\i ins_communication_languages.sql
 
-\i ins_contact_point_usage_types.sql
+--\i ins_contact_point_usage_types.sql
 
 --\i ins_countries.sql
 
-\i ins_employment_statuses.sql
+--\i ins_employment_statuses.sql
 
 --\i ins_event_role_types.sql
 
-\i ins_genders.sql
+--\i ins_genders.sql
 
-\i ins_marital_statuses.sql
+--\i ins_marital_statuses.sql
 
-\i ins_match_statuses.sql
+--\i ins_match_statuses.sql
 
 --
 -- Database comments
 --
 
-\i doc_cin.sql
+--\i doc_cin.sql
 
 select rlm.component_registered ( 'cin.sql' );
 

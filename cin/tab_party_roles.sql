@@ -14,8 +14,9 @@ create table cin.party_roles
   , updated_by                      varchar(30)            not null
   , updated_date_time               timestamp              not null
   , data_status_code                smallint               not null
-  , unique ( role_type
-	       , party_object_type_code
+  , unique ( party_id
+	       , party_role_type_id
+	       , start_date
            )
   );
 
