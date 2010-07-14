@@ -7,7 +7,7 @@ create table cin.telephone_numbers
   , contact_point_id                int                    not null  references cin.contact_points ( id )
   , telephone_number                varchar(15)            not null
   ,	extension                       varchar(15)
-  , telephone_connection_type_id    int                    not null references cin.telephone_connection_type ( id )
+  , telephone_connection_type_id    int                    not null references cin.telephone_connection_types ( id )
   , created_by                      varchar(30)            not null
   , created_date_time               timestamp              not null
   , updated_by                      varchar(30)            not null

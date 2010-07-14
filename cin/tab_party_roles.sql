@@ -20,4 +20,4 @@ create table cin.party_roles
            )
   );
 
-select rlm.component_registered ( 'tab_party_role_types.sql' );
+select rlm.component_registered ( 'tab_party_roles.sql' );

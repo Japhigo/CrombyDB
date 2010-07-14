@@ -17,4 +17,4 @@ create table cin.party_role_histories
   , data_status_code                smallint
   );
 
-select rlm.component_registered ( 'tab_party_role_type_histories.sql' );
+select rlm.component_registered ( 'tab_party_role_histories.sql' );

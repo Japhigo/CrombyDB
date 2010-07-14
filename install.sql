@@ -7,6 +7,7 @@ select current_timestamp;
 --
 -- Stop users from creating objects in the public schema
 --
+/*
 revoke create on schema public from public;
 
 \qecho Creating temporary table to hold release details
@@ -66,11 +67,11 @@ values
 drop table if exists tmp_release_details;
 	
 select rlm.mark_release_complete();
-
+*/
 \qecho displaying installed components
 
-select * from view_db_releases;
+select * from viw_db_releases;
 
-select * from view_db_release_components order by start_date_time;
+select * from viw_db_release_components order by start_date_time;
 
 \qecho Install finished

@@ -178,6 +178,10 @@ create schema cin;
 
 \i trg_bir_countries.sql
 
+\i trg_bir_data_statuses.sql
+
+\i trg_bir_data_load_statuses.sql
+
 \i trg_bir_employment_statuses.sql
 
 \i trg_bir_event_role_types.sql
@@ -239,6 +243,10 @@ create schema cin;
 \i trg_bur_contact_point_usage_types.sql
 
 \i trg_bur_countries.sql
+
+\i trg_bur_data_statuses.sql
+
+\i trg_bur_data_load_statuses.sql
 
 \i trg_bur_employment_statuses.sql
 

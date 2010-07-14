@@ -8,7 +8,7 @@ as
         ,pro.party_id
         ,pro.party_role_type_id
         ,pro.description as department_name
-        ,pty.description as department_type
+        ,par.description as department_type
         ,pro.start_date
         ,pro.end_date
     from cin.party_roles pro join cin.party_role_types prt on prt.id = pro.party_role_type_id join

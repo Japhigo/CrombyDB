@@ -7,6 +7,6 @@ insert into cin.data_load_statuses ( code, description ) values ( 0, 'Errors fix
 insert into cin.data_load_statuses ( code, description ) values ( 1, 'Loaded' );
 insert into cin.data_load_statuses ( code, description ) values ( 2, 'Updated' );
 	
-select rlm.component_registered ( 'ind_data_load_statuses.sql' );
+select rlm.component_registered ( 'ins_data_load_statuses.sql' );
 
 \qecho data_load_statuses inserted

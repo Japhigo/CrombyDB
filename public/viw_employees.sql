@@ -13,7 +13,7 @@ as
         ,per.family_name
         ,per.title
         ,per.name_suffix
-    from cin.parties pty join cin.persons per on per.party_id = pty.id
+    from cin.parties pty join cin.party_persons per on per.party_id = pty.id
    where pty.internal
      and pty.data_status_code != -1
      and per.data_status_code != -1;
