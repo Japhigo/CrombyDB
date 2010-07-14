@@ -4,9 +4,9 @@ select rlm.register_component ( 'CIN', 'tab_events.sql' );
 
 create table cin.events
   ( id                              serial                 primary key
-  , relationship_id                 int                    not null references party_relationships ( id )
-  , event_type_id                   int                    not null references event_types ( id )
-  , event_status_id                 int                    not null references event_statuses ( id )
+  , relationship_id                 int                    not null references cin.party_relationships ( id )
+  , event_type_id                   int                    not null references cin.event_types ( id )
+  , event_status_id                 int                    not null references cin.event_statuses ( id )
   , description                     varchar(255)           not null
   , from_date_time                  timestamp              not null
   , to_date_time                    timestamp

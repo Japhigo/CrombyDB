@@ -4,7 +4,7 @@ select rlm.register_component ( 'CIN', 'tab_party_person_histories.sql' );
 
 create table cin.party_person_histories
   ( id                              serial                 primary key
-  , party_person_id                 int                    references party_persons ( id )
+  , party_person_id                 int                    references cin.party_persons ( id )
   , given_name                      varchar(40)
   , middle_names                    varchar(40)
   , family_name                     varchar(40)

@@ -80,6 +80,8 @@ create schema cin;
 
 \i tab_relationship_types.sql
 
+\i tab_telephone_connection_types.sql
+
 --
 -- data tables
 --

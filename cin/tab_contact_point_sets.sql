@@ -4,7 +4,7 @@ select rlm.register_component ( 'CIN', 'tab_contact_point_sets.sql' );
 
 create table cin.contact_point_sets
   ( id                              serial                 primary key
-  , party_id                        int                    not null references cin.party_id ( id )
+  , party_id                        int                    not null references cin.parties ( id )
   , created_by                      varchar(30)            not null
   , created_date_time               timestamp              not null
   , updated_by                      varchar(30)            not null
