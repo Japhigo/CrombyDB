@@ -144,6 +144,8 @@ create schema cin;
 -- functions
 --
 
+\i fnc_calc_data_status.sql
+
 \i fnc_trg_bir_audit.sql
 
 \i fnc_trg_bir_data_statuses.sql
