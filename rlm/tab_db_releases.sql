@@ -12,7 +12,7 @@ create table rlm.db_releases
   , start_date_time    timestamp         not null  default current_timestamp
   , end_date_time      timestamp
   , unique ( release_type_code
-	       , major_id
+           , major_id
            , minor_id
            , sub_id
            )

@@ -3,10 +3,10 @@
 select rlm.register_component ( 'CIN', 'tab_correspondence_addresses.sql' );
 
 create table cin.correspondence_addresses
-  (	id                              serial                 primary key
+  ( id                              serial                 primary key
   , contact_point_id                int                    not null  references cin.contact_points ( id )
   , postal_address_id               int                    not null  references cin.postal_addresses ( id )
-  ,	attention_of_text               varchar(35)
+  , attention_of_text               varchar(35)
   , created_by                      varchar(30)            not null
   , created_date_time               timestamp              not null
   , updated_by                      varchar(30)            not null

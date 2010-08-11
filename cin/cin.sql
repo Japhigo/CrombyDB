@@ -14,6 +14,8 @@ create schema cin;
 
 \i dom_contact_point_object_type.sql
 
+\i dom data_load_file_type.sql
+
 \i dom_party_object_type.sql
 
 \i dom_role_int_ext_type.sql

@@ -5,7 +5,9 @@ select rlm.register_component ( 'CIN', 'tab_ref_data_load_rows.sql' );
 create table cin.ref_data_load_rows
   ( id                              serial                 not null primary key
   , ref_data_load_id                int                    not null references cin.ref_data_loads ( id )
-  , raw_data_row                    text
+  , code                            varchar(10)
+  , display                         varchar(30)
+  , description                     varchar(255)
   , errors                          text
   , created_by                      varchar(30)            not null
   , created_date_time               timestamp              not null
