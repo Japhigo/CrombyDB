@@ -7,6 +7,7 @@ create table cin.contact_points
   , contact_point_set_id            int                    not null references cin.contact_point_sets ( id )
   , contact_point_object_type_code  cin.contact_point_object_type
   , contact_point_usage_type_id     int                    not null references cin.contact_point_usage_types ( id )
+  , contact_point_fail_type_id      int                             references cin.contact_point_fail_types ( id )
   , start_date_time                 timestamp              not null
   , end_date_time                   timestamp
   , created_by                      varchar(30)            not null

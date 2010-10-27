@@ -3,7 +3,7 @@
 select rlm.register_component ( 'CIN', 'tab_email_addresses.sql' );
 
 create table cin.email_addresses
-  (	id                              serial                 primary key
+  ( id                              serial                 primary key
   , contact_point_id                int                    not null references cin.contact_points ( id )
   , email_address                   varchar(320)           not null
   , created_by                      varchar(30)            not null

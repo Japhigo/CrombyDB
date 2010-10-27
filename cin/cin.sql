@@ -44,6 +44,8 @@ create schema cin;
 
 \i tab_contact_point_usage_types.sql
 
+\i tab_contact_point_fail_types.sql
+
 \i tab_countries.sql
 
 \i tab_employment_statuses.sql
