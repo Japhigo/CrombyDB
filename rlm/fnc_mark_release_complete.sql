@@ -1,7 +1,7 @@
 \qecho Creating function mark_release_complete
 
-create or replace function rlm.mark_release_complete ()
-	returns void
+create or replace function rlm.mark_release_complete()
+  returns void
 as $$
   declare
 
@@ -10,8 +10,8 @@ as $$
     c_drl cursor
     for
       select id
-	    from rlm.db_releases
-	   order by id desc;
+        from rlm.db_releases
+       order by id desc;
 
   begin
 
@@ -20,10 +20,9 @@ as $$
     close c_drl;
 
     update rlm.db_releases
-	   set end_date_time = current_timestamp
-	 where id = v_db_release_id;
+       set end_date_time = current_timestamp
+     where id = v_db_release_id;
 
   end;
 $$ language plpgsql;
-
 

@@ -13,12 +13,12 @@ drop function if exists rlm.current_version();
 
 \qecho Dropping stored function register_component
 drop function if exists rlm.register_component
-  ( component_type_code  char(3)
-  , component_name       varchar(255)
+  (component_type_code  char(3)
+  ,component_name       varchar(255)
   );
 
 \qecho Dropping stored function component_registered
-drop function if exists rlm.component_registered ( component_name  varchar(255) );
+drop function if exists rlm.component_registered (component_name  varchar(255));
 
 \qecho Dropping table db_release_components
 drop table if exists rlm.db_release_components cascade;
