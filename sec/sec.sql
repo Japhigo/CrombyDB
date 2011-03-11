@@ -1,6 +1,6 @@
 \qecho Installing Security component...
 
-select rlm.register_component ( 'SEC', 'sec.sql' );
+select rlm.register_component('SEC', 'sec.sql');
 
 \qecho Creating Security schema
 
@@ -65,6 +65,6 @@ create schema sec;
 
 --\i doc_sec.sql
 
-select rlm.component_registered ( 'sec.sql' );
+select rlm.component_registered('sec.sql');
 
 \qecho Security component installed
