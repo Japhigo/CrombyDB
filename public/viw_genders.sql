@@ -1,6 +1,6 @@
 \qecho Creating view on genders
 
-select rlm.register_component ( 'PUB', 'viw_genders.sql' );
+select rlm.register_component('PUB', 'viw_genders.sql');
 
 create or replace view public.viw_genders
 as
@@ -8,14 +8,17 @@ as
         ,gen.code
         ,gen.display
         ,gen.description
+        ,gen.effective_from_date
+        ,gen.effective_to_date
         ,gen.created_by
-        ,gen.created_date_time
+        ,gen.created_at
         ,gen.updated_by
-        ,gen.updated_date_time
+        ,gen.updated_at
         ,gen.data_status_code
         ,das.description as data_status_desc
-    from cin.genders gen join cin.data_statuses das on gen.data_status_code = das.code
-   where gen.data_status_code != -1
-     and gen.available;
+        ,case when current_date between effective_from_date and effective_to_date then true
+           else false
+         end as available
+    from cin.genders gen join cin.data_statuses das on gen.data_status_code = das.code;
 
-select rlm.component_registered ( 'viw_genders.sql' );
+select rlm.component_registered('viw_genders.sql');

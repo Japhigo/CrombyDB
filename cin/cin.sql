@@ -1,6 +1,6 @@
 \qecho Installing Customer Intelligence component...
 
-select rlm.register_component ( 'CIN', 'cin.sql' );
+select rlm.register_component('CIN', 'cin.sql');
 
 \qecho Creating Customer Intelligence schema
 
@@ -342,6 +342,6 @@ create schema cin;
 
 --\i doc_cin.sql
 
-select rlm.component_registered ( 'cin.sql' );
+select rlm.component_registered('cin.sql');
 
 \qecho Customer Intelligence component installed
