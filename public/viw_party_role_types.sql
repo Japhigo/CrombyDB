@@ -9,9 +9,9 @@ as
         ,prt.display
         ,prt.description
         ,prt.created_by
-        ,prt.created_date_time
+        ,prt.created_at
         ,prt.updated_by
-        ,prt.updated_date_time
+        ,prt.updated_at
         ,prt.data_status_code
         ,das.description as data_status_desc
     from cin.party_role_types prt join cin.data_statuses das on prt.data_status_code = das.code

@@ -9,9 +9,9 @@ as
         ,poc.display
         ,poc.description
         ,poc.created_by
-        ,poc.created_date_time
+        ,poc.created_at
         ,poc.updated_by
-        ,poc.updated_date_time
+        ,poc.updated_at
         ,poc.data_status_code
         ,das.description as data_status_desc
     from cin.postal_address_categories poc join cin.data_statuses das on poc.data_status_code = das.code

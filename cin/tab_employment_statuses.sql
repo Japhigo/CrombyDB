@@ -1,6 +1,6 @@
 \qecho Creating table employment_statuses
 
-select rlm.register_component ('CIN', 'tab_employment_statuses.sql');
+select rlm.register_component('CIN', 'tab_employment_statuses.sql');
 
 create table cin.employment_statuses
   (id                              serial                 primary key

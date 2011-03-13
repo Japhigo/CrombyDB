@@ -9,9 +9,9 @@ as
         ,col.display
         ,col.description
         ,col.created_by
-        ,col.created_date_time
+        ,col.created_at
         ,col.updated_by
-        ,col.updated_date_time
+        ,col.updated_at
         ,col.data_status_code
         ,das.description as data_status_desc
     from cin.communication_languages col join cin.data_statuses das on col.data_status_code = das.code

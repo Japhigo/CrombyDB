@@ -9,9 +9,9 @@ as
         ,pat.display
         ,pat.description
         ,pat.created_by
-        ,pat.created_date_time
+        ,pat.created_at
         ,pat.updated_by
-        ,pat.updated_date_time
+        ,pat.updated_at
         ,pat.data_status_code
         ,das.description as data_status_desc
     from cin.party_types pat join cin.data_statuses das on pat.data_status_code = das.code

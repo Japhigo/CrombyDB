@@ -9,9 +9,9 @@ as
         ,mat.display
         ,mat.description
         ,mat.created_by
-        ,mat.created_date_time
+        ,mat.created_at
         ,mat.updated_by
-        ,mat.updated_date_time
+        ,mat.updated_at
         ,mat.data_status_code
         ,das.description as data_status_desc
     from cin.match_statuses mat join cin.data_statuses das on mat.data_status_code = das.code

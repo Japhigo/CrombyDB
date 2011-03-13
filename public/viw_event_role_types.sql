@@ -9,9 +9,9 @@ as
         ,ert.display
         ,ert.description
         ,ert.created_by
-        ,ert.created_date_time
+        ,ert.created_at
         ,ert.updated_by
-        ,ert.updated_date_time
+        ,ert.updated_at
         ,ert.data_status_code
         ,das.description as data_status_desc
     from cin.event_role_types ert join cin.data_statuses das on ert.data_status_code = das.code

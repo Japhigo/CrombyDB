@@ -9,9 +9,9 @@ as
         ,mas.display
         ,mas.description
         ,mas.created_by
-        ,mas.created_date_time
+        ,mas.created_at
         ,mas.updated_by
-        ,mas.updated_date_time
+        ,mas.updated_at
         ,mas.data_status_code
         ,das.description as data_status_desc
     from cin.marital_statuses mas join cin.data_statuses das on mas.data_status_code = das.code

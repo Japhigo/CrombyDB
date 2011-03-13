@@ -9,9 +9,9 @@ as
         ,pgt.display
         ,pgt.description
         ,pgt.created_by
-        ,pgt.created_date_time
+        ,pgt.created_at
         ,pgt.updated_by
-        ,pgt.updated_date_time
+        ,pgt.updated_at
         ,pgt.data_status_code
         ,das.description as data_status_desc
     from cin.party_group_types pgt join cin.data_statuses das on pgt.data_status_code = das.code

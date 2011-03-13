@@ -9,9 +9,9 @@ as
         ,evs.display
         ,evs.description
         ,evs.created_by
-        ,evs.created_date_time
+        ,evs.created_at
         ,evs.updated_by
-        ,evs.updated_date_time
+        ,evs.updated_at
         ,evs.data_status_code
         ,das.description as data_status_desc
     from cin.event_statuses evs join cin.data_statuses das on evs.data_status_code = das.code

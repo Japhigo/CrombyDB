@@ -1,6 +1,6 @@
 \qecho Creating BIR trigger function for ref_data_tables
 
-select rlm.register_component ( 'CIN', 'fnc_trg_bir_ref_data_tables.sql' );
+select rlm.register_component('CIN', 'fnc_trg_bir_ref_data_tables.sql');
 
 create or replace function cin.bir_ref_data_tables()
   returns trigger
@@ -37,12 +37,12 @@ as $bir_ref_data_tables$
       new.updated_by := session_user;
     end if;
 
-    new.created_date_time := current_timestamp;
-    new.updated_date_time := current_timestamp;
+    new.created_at := current_timestamp;
+    new.updated_at := current_timestamp;
 
     return new;
 
   end;
 $bir_ref_data_tables$ LANGUAGE plpgsql;
 
-select rlm.component_registered ( 'fnc_trg_bir_ref_data_tables.sql' );
+select rlm.component_registered('fnc_trg_bir_ref_data_tables.sql');

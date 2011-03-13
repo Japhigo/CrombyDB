@@ -9,9 +9,9 @@ as
         ,far.display
         ,far.description
         ,far.created_by
-        ,far.created_date_time
+        ,far.created_at
         ,far.updated_by
-        ,far.updated_date_time
+        ,far.updated_at
         ,far.data_status_code
         ,das.description as data_status_desc
     from cin.flagged_address_reasons far join cin.data_statuses das on far.data_status_code = das.code

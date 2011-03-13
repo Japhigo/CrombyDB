@@ -9,9 +9,9 @@ as
         ,oct.display
         ,oct.description
         ,oct.created_by
-        ,oct.created_date_time
+        ,oct.created_at
         ,oct.updated_by
-        ,oct.updated_date_time
+        ,oct.updated_at
         ,oct.data_status_code
         ,das.description as data_status_desc
     from cin.occupation_types oct join cin.data_statuses das on oct.data_status_code = das.code

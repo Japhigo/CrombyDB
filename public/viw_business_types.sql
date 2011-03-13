@@ -9,9 +9,9 @@ as
         ,but.display
         ,but.description
         ,but.created_by
-        ,but.created_date_time
+        ,but.created_at
         ,but.updated_by
-        ,but.updated_date_time
+        ,but.updated_at
         ,but.data_status_code
         ,das.description as data_status_desc
     from cin.business_types but join cin.data_statuses das on but.data_status_code = das.code

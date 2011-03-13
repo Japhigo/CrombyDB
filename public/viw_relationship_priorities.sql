@@ -9,9 +9,9 @@ as
         ,rep.display
         ,rep.description
         ,rep.created_by
-        ,rep.created_date_time
+        ,rep.created_at
         ,rep.updated_by
-        ,rep.updated_date_time
+        ,rep.updated_at
         ,rep.data_status_code
         ,das.description as data_status_desc
     from cin.relationship_priorities rep join cin.data_statuses das on rep.data_status_code = das.code

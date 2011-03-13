@@ -9,9 +9,9 @@ as
         ,cpu.display
         ,cpu.description
         ,cpu.created_by
-        ,cpu.created_date_time
+        ,cpu.created_at
         ,cpu.updated_by
-        ,cpu.updated_date_time
+        ,cpu.updated_at
         ,cpu.data_status_code
         ,das.description as data_status_desc
     from cin.contact_point_usage_types cpu join cin.data_statuses das on cpu.data_status_code = das.code

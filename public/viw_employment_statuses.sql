@@ -9,9 +9,9 @@ as
         ,ems.display
         ,ems.description
         ,ems.created_by
-        ,ems.created_date_time
+        ,ems.created_at
         ,ems.updated_by
-        ,ems.updated_date_time
+        ,ems.updated_at
         ,ems.data_status_code
         ,das.description as data_status_desc
     from cin.employment_statuses ems join cin.data_statuses das on ems.data_status_code = das.code

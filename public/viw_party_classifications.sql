@@ -9,9 +9,9 @@ as
         ,pac.display
         ,pac.description
         ,pac.created_by
-        ,pac.created_date_time
+        ,pac.created_at
         ,pac.updated_by
-        ,pac.updated_date_time
+        ,pac.updated_at
         ,pac.data_status_code
         ,das.description as data_status_desc
     from cin.party_classifications pac join cin.data_statuses das on pac.data_status_code = das.code

@@ -9,9 +9,9 @@ as
         ,cou.display
         ,cou.description
         ,cou.created_by
-        ,cou.created_date_time
+        ,cou.created_at
         ,cou.updated_by
-        ,cou.updated_date_time
+        ,cou.updated_at
         ,cou.data_status_code
         ,das.description as data_status_desc
     from cin.countries cou join cin.data_statuses das on cou.data_status_code = das.code

@@ -9,9 +9,9 @@ as
         ,res.display
         ,res.description
         ,res.created_by
-        ,res.created_date_time
+        ,res.created_at
         ,res.updated_by
-        ,res.updated_date_time
+        ,res.updated_at
         ,res.data_status_code
         ,das.description as data_status_desc
     from cin.relationship_statuses res join cin.data_statuses das on res.data_status_code = das.code
