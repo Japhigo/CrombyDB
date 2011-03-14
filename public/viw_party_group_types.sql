@@ -1,6 +1,6 @@
 \qecho Creating view on party_group_types
 
-select rlm.register_component ( 'PUB', 'viw_party_group_types.sql' );
+select rlm.register_component('PUB', 'viw_party_group_types.sql');
 
 create or replace view public.viw_party_group_types
 as
@@ -14,8 +14,10 @@ as
         ,pgt.updated_at
         ,pgt.data_status_code
         ,das.description as data_status_desc
-    from cin.party_group_types pgt join cin.data_statuses das on pgt.data_status_code = das.code
-   where pgt.data_status_code != -1
-     and pgt.available;
+        ,case when current_date between effective_from_date and coalesce(effective_to_date, current_date) then true
+           else false
+         end as available
+    from cin.party_group_types pgt join cin.data_statuses das on pgt.data_status_code = das.code;
 
-select rlm.component_registered ( 'viw_party_group_types.sql' );
+select rlm.component_registered('viw_party_group_types.sql');
+

@@ -7,6 +7,7 @@ insert into sec.system_roles(role_name, description) values ('ref_data_admin', '
 insert into sec.system_roles(role_name, description) values ('employee_admin', 'Employee Data Administrator');
 insert into sec.system_roles(role_name, description) values ('security_admin', 'User Administrator');
 insert into sec.system_roles(role_name, description) values ('system_admin', 'Cromby System Administrator');
+insert into sec.system_roles(role_name, description) values ('cromby_user', 'Cromby User');
 commit;
 
 select rlm.component_registered('ins_system_roles.sql');

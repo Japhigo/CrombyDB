@@ -1,6 +1,6 @@
 \qecho Creating view db_releases
 
-select rlm.register_component ( 'PUB', 'viw_db_releases.sql' );
+select rlm.register_component('PUB', 'viw_db_releases.sql');
 
 create or replace view public.viw_db_releases
 as
@@ -11,9 +11,9 @@ as
               when release_type_code = 'DAT' then 'Data'
               when release_type_code = 'FIX' then 'Patch'
          end as release_type
-   	    ,ltrim ( to_char ( major_id, '999' ) ) || '.' || 
-           ltrim ( to_char ( minor_id, '999' ) ) || '.' ||
-           ltrim ( to_char ( sub_id, '999' ) ) as db_release
+        ,ltrim(to_char(major_id, '999')) || '.' || 
+         ltrim(to_char(minor_id, '999')) || '.' ||
+         ltrim(to_char(sub_id, '999')) as db_release
         ,description
         ,release_notes
         ,installed_by
@@ -21,4 +21,5 @@ as
         ,end_date_time
     from rlm.db_releases;
 
-select rlm.component_registered ( 'viw_db_releases.sql' );
+select rlm.component_registered('viw_db_releases.sql');
+

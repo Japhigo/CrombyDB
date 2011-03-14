@@ -1,12 +1,10 @@
 \qecho Installing Public component...
 
-select rlm.register_component ( 'PUB', 'public.sql' );
+select rlm.register_component('PUB', 'public.sql');
 
 --
 -- Tables
 --
-\i tab_logger_entries.sql
-
 \i tab_sessions.sql
 
 --
@@ -70,6 +68,10 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 --
 -- Functions
 --
+\i fnc_authenticate_user.sql
+
+\i fnc_authorize_user.sql
+
 \i fnc_current_version.sql
 
 \i fnc_upd_user_password.sql
@@ -78,8 +80,6 @@ select rlm.register_component ( 'PUB', 'public.sql' );
 -- Rules
 --
 
-\i rul_upd_viw_users.sql
-
-select rlm.component_registered ( 'public.sql' );
+select rlm.component_registered('public.sql');
 
 \qecho Public component installed

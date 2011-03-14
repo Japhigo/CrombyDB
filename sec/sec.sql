@@ -15,6 +15,8 @@ create schema sec;
 --
 \i tab_users.sql
 
+\i tab_user_password_histories.sql
+
 \i tab_system_roles.sql
 
 \i tab_user_roles.sql
@@ -30,6 +32,8 @@ create schema sec;
 -- functions
 --
 \i fnc_trg_bir_users.sql
+
+\i fnc_trg_bur_users.sql
 
 \i fnc_trg_bir_sec_audit.sql
 

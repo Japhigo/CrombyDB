@@ -1,6 +1,6 @@
 \qecho Creating view on event_statuses
 
-select rlm.register_component ( 'PUB', 'viw_event_statuses.sql' );
+select rlm.register_component('PUB', 'viw_event_statuses.sql');
 
 create or replace view public.viw_event_statuses
 as
@@ -14,8 +14,10 @@ as
         ,evs.updated_at
         ,evs.data_status_code
         ,das.description as data_status_desc
-    from cin.event_statuses evs join cin.data_statuses das on evs.data_status_code = das.code
-   where evs.data_status_code != -1
-     and evs.available;
+        ,case when current_date between effective_from_date and coalesce(effective_to_date, current_date) then true
+           else false
+         end as available
+    from cin.event_statuses evs join cin.data_statuses das on evs.data_status_code = das.code;
 
-select rlm.component_registered ( 'viw_event_statuses.sql' );
+select rlm.component_registered('viw_event_statuses.sql');
+

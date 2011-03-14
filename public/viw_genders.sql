@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_genders.sql');
 
-create or replace view public.viw_genders
+create or replace view public.vw_genders
 as
   select gen.id
         ,gen.code
@@ -16,7 +16,7 @@ as
         ,gen.updated_at
         ,gen.data_status_code
         ,das.description as data_status_desc
-        ,case when current_date between effective_from_date and effective_to_date then true
+        ,case when current_date between effective_from_date and coalesce(effective_to_date, current_date) then true
            else false
          end as available
     from cin.genders gen join cin.data_statuses das on gen.data_status_code = das.code;

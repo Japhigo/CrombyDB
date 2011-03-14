@@ -1,21 +1,21 @@
 \qecho Creating function authorize_user
 
-select rlm.register_component ( 'PUB', 'fnc_authorize_user.sql' );
+select rlm.register_component( 'PUB', 'fnc_authorize_user.sql');
 
 create or replace function public.authorize_user
-    ( p_user_uuid  uuid
-    , p_role_name  varchar(30)
-    )
-    returns varchar(30)
-    security definer
+  (p_user_uuid  uuid
+  ,p_role_name  varchar(30)
+  )
+  returns varchar(30)
+  security definer
 as $$
   declare
 
     v_user_name  varchar(30);
 
     c_usr cursor
-      ( p_user_uuid  uuid
-      , p_role_name  varchar(30)
+      (p_user_uuid  uuid
+      ,p_role_name  varchar(30)
       )
     for
       select usr.user_name
@@ -28,9 +28,9 @@ as $$
   begin
 
     open c_usr
-      ( p_user_uuid
-	  , p_role_name
-	  );
+      (p_user_uuid
+      ,p_role_name
+      );
     fetch c_usr into v_user_name;
     close c_usr;
 
@@ -39,7 +39,5 @@ as $$
   end;
 $$ language plpgsql;
 
-select rlm.component_registered ( 'fnc_authorize_user.sql' );
-
-
+select rlm.component_registered('fnc_authorize_user.sql');
 
