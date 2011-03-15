@@ -74,6 +74,8 @@ select rlm.register_component('PUB', 'public.sql');
 
 \i fnc_current_version.sql
 
+\i fnc_lock_account.sql
+
 \i fnc_upd_user_password.sql
 
 --

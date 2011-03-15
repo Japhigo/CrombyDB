@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_db_release_components.sql');
 
-create or replace view public.viw_db_release_components
+create or replace view public.vw_db_release_components
 as
   select id
         ,db_release_id

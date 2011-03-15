@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_business_types.sql');
 
-create or replace view public.viw_business_types
+create or replace view public.vw_business_types
 as
   select but.id
         ,but.code

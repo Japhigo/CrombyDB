@@ -10,6 +10,8 @@ as $bir_users$
 
     select uuid_generate_v1() into new.user_uuid;
 
+    new.account_locked := false;
+
     if new.created_by is null
     then
       new.created_by := session_user;

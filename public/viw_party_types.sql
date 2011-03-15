@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_party_types.sql');
 
-create or replace view public.viw_party_types
+create or replace view public.vw_party_types
 as
   select pat.id
         ,pat.code

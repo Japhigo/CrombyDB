@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_postal_address_categories.sql');
 
-create or replace view public.viw_postal_address_categories
+create or replace view public.vw_postal_address_categories
 as
   select poc.id
         ,poc.code

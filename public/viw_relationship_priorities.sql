@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_relationship_priorities.sql');
 
-create or replace view public.viw_relationship_priorities
+create or replace view public.vw_relationship_priorities
 as
   select rep.id
         ,rep.code

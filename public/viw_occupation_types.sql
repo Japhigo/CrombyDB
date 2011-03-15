@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_occupation_types.sql');
 
-create or replace view public.viw_occupation_types
+create or replace view public.vw_occupation_types
 as
   select oct.id
         ,oct.code

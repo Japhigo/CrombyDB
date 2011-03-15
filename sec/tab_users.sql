@@ -10,6 +10,7 @@ create table sec.users
   ,hashed_password                 text                   not null
   ,salt                            text                   not null
   ,password_expiry_date            date                   not null
+  ,account_locked                  boolean                not null
   ,user_start_date                 date                   not null
   ,user_end_date                   date
   ,created_by                      varchar(30)            not null

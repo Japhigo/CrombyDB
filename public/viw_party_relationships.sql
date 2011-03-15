@@ -2,7 +2,7 @@
 
 select rlm.register_component ( 'PUB', 'viw_party_relationships.sql' );
 
-create or replace view public.viw_party_relationships
+create or replace view public.vw_party_relationships
 as
   select pre.id
         ,pre.from_party_role_id

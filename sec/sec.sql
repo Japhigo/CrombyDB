@@ -39,6 +39,8 @@ create schema sec;
 
 \i fnc_trg_bur_sec_audit.sql
 
+\i fnc_unlock_account.sql
+
 --
 -- triggers
 --

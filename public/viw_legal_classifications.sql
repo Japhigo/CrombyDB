@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_legal_classifications.sql');
 
-create or replace view public.viw_legal_classifications
+create or replace view public.vw_legal_classifications
 as
   select lec.id
         ,lec.code

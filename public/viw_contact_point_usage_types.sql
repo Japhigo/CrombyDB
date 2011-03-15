@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_contact_point_usage_types.sql');
 
-create or replace view public.viw_contact_point_usage_types
+create or replace view public.vw_contact_point_usage_types
 as
   select cpu.id
         ,cpu.code

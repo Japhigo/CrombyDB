@@ -2,7 +2,7 @@
 
 select rlm.register_component( 'PUB', 'viw_event_role_types.sql');
 
-create or replace view public.viw_event_role_types
+create or replace view public.vw_event_role_types
 as
   select ert.id
         ,ert.code

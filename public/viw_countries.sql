@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_countries.sql');
 
-create or replace view public.viw_countries
+create or replace view public.vw_countries
 as
   select cou.id
         ,cou.code
