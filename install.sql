@@ -13,31 +13,31 @@ revoke create on schema public from public;
 \qecho Creating temporary table to hold release details
 
 create table tmp_release_details
-  ( release_type_code  char(3)       not null
-  , major_id           smallint      not null
-  , minor_id           smallint      not null
-  , sub_id             smallint      not null
-  , description        varchar(255)  not null
-  , release_notes      varchar(255)
+  (release_type_code  char(3)       not null
+  ,major_id           smallint      not null
+  ,minor_id           smallint      not null
+  ,sub_id             smallint      not null
+  ,description        varchar(255)  not null
+  ,release_notes      varchar(255)
   );
 
 \qecho Setting up release details
 
 insert into tmp_release_details
-  ( release_type_code
-  , major_id
-  , minor_id
-  , sub_id
-  , description
-  , release_notes
+  (release_type_code
+  ,major_id
+  ,minor_id
+  ,sub_id
+  ,description
+  ,release_notes
   )
 values
-  ( 'INS'
-  , 0
-  , 0
-  , 1
-  , 'initial build'
-  , 'Database install'
+  ('INS'
+  ,0
+  ,0
+  ,1
+  ,'initial build'
+  ,'Database install'
   );
 
 \qecho Installing components...

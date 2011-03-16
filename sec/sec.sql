@@ -13,7 +13,11 @@ create schema sec;
 --
 -- Tables
 --
+\i tab_non_user_logins.sq;
+
 \i tab_users.sql
+
+\i tab_user_login_histories.sql
 
 \i tab_user_password_histories.sql
 
