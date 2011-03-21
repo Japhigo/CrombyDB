@@ -6,7 +6,7 @@ create or replace function sec.unlock_account
   (p_user_name   varchar(30)
   ,p_updated_by  varchar(30)
   )
-  return void
+  returns void
 as $$
   begin
 

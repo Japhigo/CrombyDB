@@ -33,7 +33,7 @@ as $$
       ,p_hashed_password
       );
     fetch c_usp into v_dummy;
-    v_password used := FOUND;
+    v_password_used := FOUND;
     close c_usp;
 
     if not v_password_used

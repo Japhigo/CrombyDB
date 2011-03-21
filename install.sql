@@ -70,8 +70,8 @@ select rlm.mark_release_complete();
 
 \qecho displaying installed components
 
-select * from viw_db_releases;
+select * from vw_db_releases;
 
-select * from viw_db_release_components order by start_date_time;
+select * from vw_db_release_components order by start_date_time;
 
 \qecho Install finished

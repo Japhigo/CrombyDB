@@ -4,7 +4,7 @@ select rlm.register_component('PUB', 'fnc_lock_account.sql');
 
 create or replace function public.lock_account
   (p_user_name  varchar(30))
-  return void
+  returns void
   security definer
 as $$
   begin

@@ -14,7 +14,7 @@ create schema cin;
 
 \i dom_contact_point_object_type.sql
 
-\i dom data_load_file_type.sql
+\i dom_data_load_file_type.sql
 
 \i dom_party_object_type.sql
 
@@ -148,7 +148,7 @@ create schema cin;
 -- functions
 --
 
-\i fnc_calc_data_status.sql
+\i fnc_calc_data_status_code.sql
 
 \i fnc_trg_bir_audit.sql
 

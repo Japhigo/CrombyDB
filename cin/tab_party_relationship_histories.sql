@@ -16,7 +16,7 @@ create table cin.party_relationship_histories
   ,created_at                      timestamp
   ,updated_by                      varchar(30)
   ,updated_at                      timestamp
-   data_status_code                smallint
+  ,data_status_code                smallint
   );
 
 select rlm.component_registered('tab_party_relationship_histories.sql');
