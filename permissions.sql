@@ -22,9 +22,13 @@ grant select, update on cin.ref_data_tables to ref_data_admin;
 
 create role employee_admin nologin inherit;
 create role security_admin nologin inherit;
+
+
 create role system_admin nologin inherit;
 create role cromby_user nologin inherit;
-
+create role cromby_login nologin inherit;
+create role cromby_archivist nologin inherit;
+		
 select rlm.component_registered('permissions.sql');
 
 \qecho Permissions created
