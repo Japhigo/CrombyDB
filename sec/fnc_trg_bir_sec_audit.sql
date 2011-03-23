@@ -5,20 +5,25 @@ select rlm.register_component('SEC', 'fnc_trg_bir_sec_audit.sql');
 create or replace function sec.bir_sec_audit()
   returns trigger
 as $bir_sec_audit$
+  declare
+
+    v_timestamp  timestamp   := current_timestamp;
+    v_user       varchar(30) := session_user;
+
   begin
 
     if new.created_by is null
     then
-      new.created_by := session_user;
+      new.created_by := v_user;
     end if;
 
     if new.updated_by is null
     then
-      new.updated_by := session_user;
+      new.updated_by := v_user;
     end if;
 
-    new.created_at := current_timestamp;
-    new.updated_at := current_timestamp;
+    new.created_at := v_timestamp;
+    new.updated_at := v_timestamp;
 
     return new;
 

@@ -6,6 +6,11 @@ create or replace function sec.bir_users()
   returns trigger
   security definer
 as $bir_users$
+  declare
+
+    v_timestamp  timestamp   := current_timestamp;
+    v_user       varchar(30) := session_user;
+
   begin
 
     select uuid_generate_v1() into new.user_uuid;
@@ -14,16 +19,16 @@ as $bir_users$
 
     if new.created_by is null
     then
-      new.created_by := session_user;
+      new.created_by := v_user;
     end if;
 
     if new.updated_by is null
     then
-      new.updated_by := session_user;
+      new.updated_by := v_user;
     end if;
 
-    new.created_at := current_timestamp;
-    new.updated_at := current_timestamp;
+    new.created_at := v_timestamp;
+    new.updated_at := v_timestamp;
 
     return new;
 

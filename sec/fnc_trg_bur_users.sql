@@ -4,7 +4,11 @@ select rlm.register_component('SEC', 'fnc_trg_bur_users.sql');
 
 create or replace function sec.bur_users()
   returns trigger
-as $bur_users$
+as $bur_users$ 
+  declare
+
+    v_timestamp  timestamp := current_timestamp;
+
   begin
 
     if new.updated_by is null
@@ -12,7 +16,7 @@ as $bur_users$
       new.updated_by := session_user;
     end if;
 
-    new.updated_at := current_timestamp;
+    new.updated_at := v_timestamp;
 
     if new.hashed_password != old.hashed_password
     then
@@ -26,7 +30,7 @@ as $bur_users$
         (old.id
         ,old.hashed_password
         ,new.updated_by
-        ,current_timestamp
+        ,v_timestamp
         );
     end if;
 

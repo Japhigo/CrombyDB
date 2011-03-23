@@ -69,6 +69,8 @@ create schema sec;
 --
 \i ins_system_roles.sql
  
+\i ins_initial_users.sql
+ 
 --
 -- Database comments
 --

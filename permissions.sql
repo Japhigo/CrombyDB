@@ -38,10 +38,23 @@ grant select, insert, update on cin.relationship_statuses to ref_data_admin;
 grant select, insert, update on cin.relationship_types to ref_data_admin;
 grant select, insert, update on cin.telephone_connection_types to ref_data_admin;
 
-
 grant ref_data_admin to am_user;
 
+\qecho Create role employee_admin
+
 create role employee_admin nologin inherit;
+
+\qecho Assign permissions to employee_admin
+
+grant select, insert, update on cin.parties to employee_admin;
+grant select, insert, update on cin.party_persons to employee_admin;
+grant select, insert, update on cin.party_organisations to employee_admin;
+grant select, insert, update on cin.party_role_types to employee_admin;	
+grant select, insert, update on cin.party_roles to employee_admin;	
+grant select, insert, update on cin.party_relationships to employee_admin;	
+
+grant employee_admin to am_user;
+
 create role security_admin nologin inherit;
 
 
