@@ -12,19 +12,19 @@ create or replace function public.upd_user_password
 as $$
   declare
 
-  v_dummy          int;
-  v_password_used  boolean;
-  v_result         int := 0;
+    v_dummy          int;
+    v_password_used  boolean;
+    v_result         int := 0;
  
-  c_usp cursor
-    (p_user_uuid        uuid
-    ,p_hashed_password  text
-    )
-  for
-    select 1
-      from sec.users usr join
-           sec.user_password_histories usp on usp.user_id = usr.id
-     where usp.hashed_password = p_hashed_password;
+    c_usp cursor
+      (p_user_uuid        uuid
+      ,p_hashed_password  text
+      )
+    for
+      select 1
+        from sec.users usr join
+             sec.user_password_histories usp on usp.user_id = usr.id
+       where usp.hashed_password = p_hashed_password;
 
   begin
 

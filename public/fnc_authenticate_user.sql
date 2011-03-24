@@ -62,12 +62,18 @@ as $$
       insert into user_login_histories
         (user_id
         ,login_successful
+        ,session_user_name
+        ,current_user_name
+        ,client_address
         ,created_by
         ,created_at
         )
       values
         (r_usr.id
         ,v_login_successful
+        ,session_user
+        ,current_user
+        ,inet_client_addr()
         ,p_user_name
         ,current_timestamp
         );
