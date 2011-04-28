@@ -6,6 +6,7 @@ create table sec.user_password_histories
   (id                              serial                 primary key
   ,user_id                         int                    not null references sec.users(id)
   ,hashed_password                 text                   not null
+  ,salt                            text                   not null
   ,created_by                      varchar(30)            not null
   ,created_at                      timestamp              not null
   );

@@ -23,12 +23,14 @@ as $bur_users$
       insert into sec.user_password_histories
         (user_id
         ,hashed_password
+        ,salt
         ,created_by
         ,created_at
         )
       values
         (old.id
         ,old.hashed_password
+        ,old.salt
         ,new.updated_by
         ,v_timestamp
         );
