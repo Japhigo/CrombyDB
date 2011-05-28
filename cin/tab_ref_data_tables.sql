@@ -17,4 +17,18 @@ create table cin.ref_data_tables
   ,updated_at                      timestamp              not null
   );
 
+comment on table cin.ref_data_tables is 'Reference Data Table information and validation rules.';
+comment on column cin.ref_data_tables.id is 'Unique identifier for row.';
+comment on column cin.ref_data_tables.table_name is 'Reference Data Table.';
+comment on column cin.ref_data_tables.description is 'Description of contents.';
+comment on column cin.ref_data_tables.code_mandatory is 'Indicates if a code must be supplied.';
+comment on column cin.ref_data_tables.code_min_length is 'Minimum length of code';
+comment on column cin.ref_data_tables.code_max_length is 'Maximum length of code';
+comment on column cin.ref_data_tables.code_format is 'Regular expression to validate format of code.';
+comment on column cin.ref_data_tables.description_mandatory is 'Indicates if a description must be supplied.';
+comment on column cin.ref_data_tables.created_by is 'Username of the user who created the record.';
+comment on column cin.ref_data_tables.created_at is 'Date and time created.';
+comment on column cin.ref_data_tables.updated_by is 'Username of user who last updated the record.';
+comment on column cin.ref_data_tables.updated_at is 'Date and time the record was last updated.';
+
 select rlm.component_registered('tab_ref_data_tables.sql');
