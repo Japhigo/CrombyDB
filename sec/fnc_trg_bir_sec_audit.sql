@@ -30,4 +30,6 @@ as $bir_sec_audit$
   end;
 $bir_sec_audit$ LANGUAGE plpgsql;
 
+comment on function sec.bir_sec_audit() is 'Before Insert Row trigger to populate audit columns.';
+
 select rlm.component_registered('fnc_trg_bir_sec_audit.sql');

@@ -320,12 +320,6 @@ create schema cin;
 
 --\i ins_match_statuses.sql
 
---
--- Database comments
---
-
---\i doc_cin.sql
-
 select rlm.component_registered('cin.sql');
 
 \qecho Customer Intelligence component installed

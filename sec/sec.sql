@@ -6,6 +6,8 @@ select rlm.register_component('SEC', 'sec.sql');
 
 create schema sec;
 	
+comment on schema sec is 'Security objects to handle users, passwords and user roles.';
+	
 --
 -- Domains
 --
