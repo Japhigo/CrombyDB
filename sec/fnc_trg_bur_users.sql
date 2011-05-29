@@ -16,7 +16,10 @@ as $bur_users$
       new.updated_by := session_user;
     end if;
 
-    new.updated_at := v_timestamp;
+    if new.updated_at is null
+    then
+      new.updated_at := v_timestamp;
+    end if;
 
     if new.hashed_password != old.hashed_password
     then

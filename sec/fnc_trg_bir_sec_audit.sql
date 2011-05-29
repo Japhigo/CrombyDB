@@ -22,8 +22,15 @@ as $bir_sec_audit$
       new.updated_by := v_user;
     end if;
 
-    new.created_at := v_timestamp;
-    new.updated_at := v_timestamp;
+    if new.created_at is null
+    then
+      new.created_at := v_timestamp;
+    end if;
+
+    if new.updated_at is null
+    then
+      new.updated_at := v_timestamp;
+    end if;
 
     return new;
 

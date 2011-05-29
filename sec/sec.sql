@@ -25,6 +25,10 @@ comment on schema sec is 'Security objects to handle users, passwords and user r
 
 \i tab_system_roles.sql
 
+\i tab_controllers.sql
+
+\i tab_controllers_by_system_role.sql
+
 \i tab_user_roles.sql
 
 \i tab_default_roles.sql
