@@ -6,7 +6,7 @@ select rlm.register_component('SEC', 'sec.sql');
 
 create schema sec;
 	
-comment on schema sec is 'Security objects to handle users, passwords and user roles.';
+comment on schema sec is '@DOCBOOK Security objects to handle users, passwords and user roles.';
 	
 --
 -- Domains
@@ -15,7 +15,13 @@ comment on schema sec is 'Security objects to handle users, passwords and user r
 --
 -- Tables
 --
+\i tab_controllers.sql
+
 \i tab_non_user_logins.sql;
+
+\i tab_security_controls.sql
+
+\i tab_system_roles.sql
 
 \i tab_users.sql
 
@@ -23,15 +29,11 @@ comment on schema sec is 'Security objects to handle users, passwords and user r
 
 \i tab_user_password_histories.sql
 
-\i tab_system_roles.sql
-
-\i tab_controllers.sql
-
 \i tab_controllers_by_system_role.sql
 
-\i tab_user_roles.sql
-
 \i tab_default_roles.sql
+
+\i tab_user_roles.sql
 
 --
 -- indexes
@@ -54,13 +56,23 @@ comment on schema sec is 'Security objects to handle users, passwords and user r
 --
 -- triggers
 --
+\i trg_bir_controllers.sql
+
+\i trg_bir_controllers_by_system_role.sql
+
+\i trg_bir_default_roles.sql
+
 \i trg_bir_users.sql
 
 \i trg_bir_system_roles.sql
 
 \i trg_bir_user_roles.sql
 
-\i trg_bir_default_roles.sql
+\i trg_bur_controllers.sql
+
+\i trg_bur_controllers_by_system_role.sql
+
+\i trg_bur_default_roles.sql
 
 \i trg_bur_users.sql
 
@@ -68,21 +80,17 @@ comment on schema sec is 'Security objects to handle users, passwords and user r
 
 \i trg_bur_user_roles.sql
 
-\i trg_bur_default_roles.sql
-
 --
 -- data population
 --
+\i ins_security_controls.sql
+
 \i ins_system_roles.sql
  
 \i ins_controllers.sql
+
+\i ins_initial_users.sql
  
---
--- Database comments
---
-
---\i doc_sec.sql
-
 select rlm.component_registered('sec.sql');
 
 \qecho Security component installed

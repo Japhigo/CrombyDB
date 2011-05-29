@@ -49,6 +49,7 @@ insert into sec.user_roles
   )
   select usr.id as user_id
         ,rol.id as system_role_id
+        ,current_date
     from sec.users usr
         ,sec.system_roles rol
    where usr.user_name = 'sysadmin'
@@ -61,6 +62,7 @@ insert into sec.user_roles
   )
   select usr.id as user_id
         ,rol.id as system_role_id
+        ,current_date
     from sec.users usr
         ,sec.system_roles rol
    where usr.user_name = 'sysadmin'
@@ -115,6 +117,7 @@ insert into sec.user_roles
   )
   select usr.id as user_id
         ,rol.id as system_role_id
+        ,current_date
     from sec.users usr
         ,sec.system_roles rol
    where usr.user_name = 'usradmin'
@@ -127,6 +130,7 @@ insert into sec.user_roles
   )
   select usr.id as user_id
         ,rol.id as system_role_id
+        ,current_date
     from sec.users usr
         ,sec.system_roles rol
    where usr.user_name = 'usradmin'

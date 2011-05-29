@@ -13,13 +13,13 @@ create table sec.controllers
   ,unique(controller)
   );
 
-comment on table sec.controllers is 'Rails controllers for authorisation.';
-comment on column cin.controllers.id is 'Unique identifier for row.';
-comment on column sec.controllers.controller is 'Rails controller name.';
-comment on column sec.controllers.description is 'The purpose of the Rails controller.';
-comment on column sec.controllers.created_by is 'Username of the user who created the record.';
-comment on column sec.controllers.created_at is 'Date and time created.';
-comment on column sec.controllers.updated_by is 'Username of user who last updated the record.';
-comment on column sec.controllers.updated_at is 'Date and time the record was last updated.';
+comment on table sec.controllers is '@DOCBOOK Rails controllers for authorisation.';
+comment on column cin.controllers.id is '@DOCBOOK Unique identifier for row.';
+comment on column sec.controllers.controller is '@DOCBOOK Rails controller name.';
+comment on column sec.controllers.description is '@DOCBOOK The purpose of the Rails controller.';
+comment on column sec.controllers.created_by is '@DOCBOOK Username of the user who created the record.';
+comment on column sec.controllers.created_at is '@DOCBOOK Date and time created.';
+comment on column sec.controllers.updated_by is '@DOCBOOK Username of user who last updated the record.';
+comment on column sec.controllers.updated_at is '@DOCBOOK Date and time the record was last updated.';
 
 select rlm.component_registered('tab_controllers.sql');
