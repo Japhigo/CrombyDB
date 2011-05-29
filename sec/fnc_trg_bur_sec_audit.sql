@@ -14,7 +14,7 @@ as $bur_sec_audit$
 
     if new.updated_at is null
     then
-      new.updated_at := v_timestamp;
+      new.updated_at := current_timestamp;
     end if;
 
     return new;

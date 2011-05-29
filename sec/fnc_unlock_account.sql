@@ -13,6 +13,7 @@ as $$
     update sec.users
        set locked_account = false
           ,updated_by = p_updated_by
+          ,updated_at = current_timestamp
      where user_name = p_user_name;
 
   end;

@@ -75,7 +75,7 @@ comment on schema sec is 'Security objects to handle users, passwords and user r
 --
 \i ins_system_roles.sql
  
-\i ins_initial_users.sql
+\i ins_controllers.sql
  
 --
 -- Database comments
