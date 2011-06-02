@@ -76,6 +76,8 @@ comment on schema sec is '@DOCBOOK Security objects to handle users, passwords a
 
 \i trg_bur_users.sql
 
+\i trg_bur_security_controls.sql
+
 \i trg_bur_system_roles.sql
 
 \i trg_bur_user_roles.sql

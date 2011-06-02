@@ -13,7 +13,7 @@ create table sec.controllers_by_system_role
   );
 
 comment on table sec.controllers_by_system_role is 'Rails controllers linked to System Role.';
-comment on column cin.controllers_by_system_role.id is 'Unique identifier for row.';
+comment on column sec.controllers_by_system_role.id is 'Unique identifier for row.';
 comment on column sec.controllers_by_system_role.controller_id is 'Foreign key to the Controllers table.';
 comment on column sec.controllers_by_system_role.system_role_id is 'Foreign key to the System Roles table.';
 comment on column sec.controllers_by_system_role.created_by is 'Username of the user who created the record.';

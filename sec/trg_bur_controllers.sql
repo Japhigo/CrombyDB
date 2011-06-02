@@ -5,6 +5,6 @@ select rlm.register_component('SEC', 'trg_bur_controllers.sql');
 create trigger bur_controllers before insert on sec.controllers
   for each row execute procedure sec.bur_sec_audit();
 
-comment on trigger bur_controllers is 'Before Update Row to check audit columns';
+comment on trigger bur_controllers on sec.controllers is '@DOCBOOK Before Update Row to check audit columns';
 
 select rlm.component_registered('trg_bur_controllers.sql');

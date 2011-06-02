@@ -7,20 +7,24 @@ begin;
 insert into cin.parties
   (name
   ,internal
+  ,data_status_code
   )
 values
   ('System Administrator'
   ,true
+  ,1
   );
 
 insert into cin.party_persons
   (given_name
   ,family_name
   ,party_id
+  ,data_status_code
   )
   select 'System'
         ,'Administrator'
         ,id
+        ,1
     from cin.parties
    where name = 'System Administrator';
 
@@ -75,20 +79,24 @@ begin;
 insert into cin.parties
   (name
   ,internal
+  ,data_status_code
   )
 values
   ('User Administrator'
   ,true
+  ,1
   );
 
 insert into cin.party_persons
   (given_name
   ,family_name
   ,party_id
+  ,data_status_code
   )
   select 'User'
         ,'Administrator'
         ,id
+        ,1
     from cin.parties
    where name = 'User Administrator';
 

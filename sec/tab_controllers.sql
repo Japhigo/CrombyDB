@@ -14,7 +14,7 @@ create table sec.controllers
   );
 
 comment on table sec.controllers is '@DOCBOOK Rails controllers for authorisation.';
-comment on column cin.controllers.id is '@DOCBOOK Unique identifier for row.';
+comment on column sec.controllers.id is '@DOCBOOK Unique identifier for row.';
 comment on column sec.controllers.controller is '@DOCBOOK Rails controller name.';
 comment on column sec.controllers.description is '@DOCBOOK The purpose of the Rails controller.';
 comment on column sec.controllers.created_by is '@DOCBOOK Username of the user who created the record.';
