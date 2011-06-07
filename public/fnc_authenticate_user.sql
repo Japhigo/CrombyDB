@@ -34,6 +34,7 @@ as $$
     close c_usr;
 
     if not v_user_found
+    --if r_usr.user_uuid is null 
     then
       insert into sec.non_user_logins
         (user_name
@@ -59,7 +60,7 @@ as $$
         v_login_successful := false;
       end if;
 
-      insert into user_login_histories
+      insert into sec.user_login_histories
         (user_id
         ,login_successful
         ,session_user_name
@@ -83,6 +84,11 @@ as $$
 
   end;
 $$ language plpgsql;
+
+comment on function public.authenticate_user
+  (p_user_name        varchar(30)
+  ,p_hashed_password  text
+  ) is '@DOCBOOK Checks supplied username and hashed password are correct, and if so returns the user''s UUID.';
 
 select rlm.component_registered('fnc_authenticate_user.sql');
 
