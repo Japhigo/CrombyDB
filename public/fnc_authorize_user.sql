@@ -17,9 +17,7 @@ as $$
     v_user_id        int;
 
     c_usr cursor
-      (p_user_uuid   uuid
-      ,p_controller  varchar(255)
-      )
+      (p_user_uuid   uuid)
     for
       select usr.user_name
             ,usr.id
@@ -40,10 +38,7 @@ as $$
 
   begin
 
-    open c_usr
-      (p_user_uuid
-      ,p_controller
-      );
+    open c_usr(p_user_uuid);
     fetch c_usr into v_user_name
                     ,v_user_id;
     close c_usr;
@@ -55,7 +50,7 @@ as $$
 	close c_uro;
 
     p_user_name := v_user_name;
-    p_auth_level := v_auth_level;
+    p_auth_level := coalesce(v_auth_level, 0);
 
   end;
 $$ language plpgsql;
