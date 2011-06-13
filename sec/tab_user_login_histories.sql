@@ -8,7 +8,7 @@ create table sec.user_login_histories
   ,login_successful                boolean                not null
   ,session_user_name               name
   ,current_user_name               name
-  ,client_address                  inet
+  ,client_address                  text
   ,created_by                      varchar(30)            not null
   ,created_at                      timestamp              not null
   );

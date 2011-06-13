@@ -7,7 +7,7 @@ create table sec.non_user_logins
   ,user_name                       varchar(30)            not null
   ,session_user_name               name
   ,current_user_name               name
-  ,client_address                  inet
+  ,client_address                  text
   ,created_at                      timestamp              not null
   );
 
