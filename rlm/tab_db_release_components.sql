@@ -3,7 +3,7 @@
 create table rlm.db_release_components
   (id                   serial              primary key
   ,db_release_id        int                 not null     references rlm.db_releases(id)
-  ,component_type_code  rlm.component_type
+  ,component_type_code  varchar(3)                       check(component_type_code in ('ADM', 'BAT', 'CIN', 'PAM', 'PUB', 'RLM', 'SEC'))    
   ,component_name       varchar(255)        not null
   ,installed_by         varchar(30)         not null
   ,start_date_time      timestamp           not null     default current_timestamp

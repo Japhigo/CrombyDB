@@ -2,7 +2,7 @@
 
 create table rlm.db_releases
   (id                 serial            primary key
-  ,release_type_code  rlm.release_type  not null
+  ,release_type_code  varchar3          not null check(release_type_code in ('INS', 'DAT', 'UPG', 'FIX'))
   ,major_id           smallint          not null
   ,minor_id           smallint          not null
   ,sub_id             smallint          not null
