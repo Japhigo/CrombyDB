@@ -6,7 +6,7 @@ create table cin.parties
   (id                              serial                 primary key
   ,reference                       varchar(30)
   ,name                            varchar(255)
-  ,party_object_type_code          cin.party_object_type
+  ,party_object_type_code          varchar(3)             not null check(party_object_type_code in ('GRP', 'PER', 'ORG'))
   ,party_type_id                   int                             references cin.party_types(id)
   ,communication_language_id       int                             references cin.communication_languages(id)
   ,party_classification_id         int                             references cin.party_classifications(id)

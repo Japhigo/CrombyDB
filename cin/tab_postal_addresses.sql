@@ -4,7 +4,7 @@ select rlm.register_component('CIN', 'tab_postal_addresses.sql');
 
 create table cin.postal_addresses
   (id                              serial                 primary key
-  ,address_format_type_code        cin.address_format_type
+  ,address_format_type_code        varchar(3)             not null check(address_format_type_code in ('FRF', 'MAT'))
   ,address_category_id             int                    not null references cin.postal_address_categories(id)
   ,match_status_id                 int                    not null references cin.match_statuses(id) 
   ,line_one                        varchar(35)

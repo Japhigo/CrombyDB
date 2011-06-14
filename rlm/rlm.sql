@@ -4,10 +4,6 @@
 
 create schema rlm;
 	
-\i dom_component_type.sql
-
-\i dom_release_type.sql
-
 \i tab_db_releases.sql
 
 \i fnc_register_release.sql

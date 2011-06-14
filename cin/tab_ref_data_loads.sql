@@ -7,7 +7,7 @@ create table cin.ref_data_loads
   ,ref_data_table_id               int                      not null references cin.ref_data_tables(id)
   ,description                     varchar(255)             not null
   ,file_details                    text                     not null
-  ,data_load_file_type_code        cin.data_load_file_type  not null
+  ,data_load_file_type_code        varchar(3)               not null check(data_load_file_type_code in ('CSV', 'TXT', 'XML', 'EDI'))
   ,delimiter                       char(1)                  not null
   ,errors                          text
   ,created_by                      varchar(30)              not null

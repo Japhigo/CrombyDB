@@ -7,20 +7,6 @@ select rlm.register_component('CIN', 'cin.sql');
 create schema cin;
 	
 --
--- Domains
---
-
-\i dom_address_format_type.sql
-
-\i dom_contact_point_object_type.sql
-
-\i dom_data_load_file_type.sql
-
-\i dom_party_object_type.sql
-
-\i dom_role_int_ext_type.sql
-
---
 -- Cromby system tables
 --
 
@@ -171,6 +157,8 @@ create schema cin;
 \i fnc_trg_bur_party_roles.sql
 
 \i fnc_trg_bur_party_relationships.sql
+
+\i fnc_trg_bur_ref_data_tables.sql
 
 --
 -- triggers

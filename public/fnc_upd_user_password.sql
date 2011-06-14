@@ -51,6 +51,7 @@ as $$
     if v_password_history_count >= r_security_controls.password_history_count
     then
       -- need to delete the earliest history
+      null;
     end if;
       
     update sec.users

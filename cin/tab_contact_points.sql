@@ -5,7 +5,7 @@ select rlm.register_component('CIN', 'tab_contact_points.sql');
 create table cin.contact_points
   (id                              serial                 primary key
   ,contact_point_set_id            int                    not null references cin.contact_point_sets(id)
-  ,contact_point_object_type_code  cin.contact_point_object_type
+  ,contact_point_object_type_code  varchar(3)             not null check(contact_point_object_type_code in ('ADR', 'EML', 'FAX', 'TEL', 'WEB'))
   ,contact_point_usage_type_id     int                    not null references cin.contact_point_usage_types(id)
   ,contact_point_fail_type_id      int                             references cin.contact_point_fail_types(id)
   ,effective_from_date             date                   not null

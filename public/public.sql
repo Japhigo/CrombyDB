@@ -78,6 +78,8 @@ select rlm.register_component('PUB', 'public.sql');
 
 \i fnc_upd_user_password.sql
 
+\i fnc_user_name.sql
+
 --
 -- Rules
 --
