@@ -12,7 +12,8 @@ create or replace function public.upd_user_password
 as $$
   declare
 
-    v_password_history_count  int;
+    v_password_history_count  int := 0;
+    v_user_id                 int;
 
     c_sec cursor
     for
@@ -22,21 +23,20 @@ as $$
 
     r_security_controls  record;
 
-    c_usp cursor
+    c_usr cursor
       (p_user_uuid  uuid)
     for
-      select count(*)
-        from sec.users usr join
-             sec.user_password_histories usp on usp.user_id = usr.id
+      select id
+        from sec.users usr
        where usr.user_uuid = p_user_uuid;
 
-    c_usp_ cursor
-      (p_user_uuid  uuid)
+    c_usp cursor
+      (p_user_id  int)
     for
-      select count(*)
-        from sec.users usr join
-             sec.user_password_histories usp on usp.user_id = usr.id
-       where usr.user_uuid = p_user_uuid;
+      select id
+        from sec.user_password_histories
+       where usr.user_id = p_user_id
+       order by id desc;
 
   begin
 
@@ -44,16 +44,21 @@ as $$
     fetch c_sec into r_security_controls;
     close c_sec;
 
-    open c_usp(p_user_uuid);
-    fetch c_usp into v_password_history_count;
-    close c_usp;
+    open c_usr(p_user_uuid);
+    fetch c_usr into v_user_id;
+    close c_usr;
 
-    if v_password_history_count >= r_security_controls.password_history_count
-    then
-      -- need to delete the earliest history
-      null;
-    end if;
-      
+    for r_usp in c_usp
+      (v_user_id)
+    loop
+      v_password_history_count := v_password_history_count + 1;
+      if v_password_history_count >= r_security_controls.password_history_count
+      then
+        delete from user_password_histories
+        where  id = r_usp.id;
+      end if;
+    end loop;
+  
     update sec.users
        set hashed_password = p_hash           
           ,salt = p_salt
