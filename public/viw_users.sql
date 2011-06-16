@@ -8,7 +8,7 @@ as
         ,party_person_id
         ,user_name
         ,user_uuid
-        ,'?' as hashed_password
+        ,md5(user_name) as hashed_password
         ,salt
         ,account_locked
         ,password_expiry_date - current_date as days_until_password_expiry
