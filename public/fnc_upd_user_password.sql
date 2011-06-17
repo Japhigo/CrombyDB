@@ -36,7 +36,7 @@ as $$
       select id
         from sec.user_password_histories uph
        where uph.user_id = p_user_id
-       order by id;
+       order by id desc;
 
   begin
 
@@ -54,7 +54,7 @@ as $$
       v_password_history_count := v_password_history_count + 1;
       if v_password_history_count >= r_security_controls.password_history_count
       then
-        delete from user_password_histories
+        delete from sec.user_password_histories
         where  id = r_uph.id;
       end if;
     end loop;

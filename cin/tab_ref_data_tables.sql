@@ -4,16 +4,16 @@ select rlm.register_component('CIN', 'tab_ref_data_tables.sql');
 
 create table cin.ref_data_tables
   (id                              serial                 not null primary key
-  ,table_name                      varchar(63)            not null
-  ,description                     varchar(255)           not null
+  ,table_name                      varchar(63)            not null check(length(table_name) > 0)
+  ,description                     varchar(255)           not null check(length(description) > 0)
   ,code_mandatory                  boolean                not null
   ,code_min_length                 smallint                        check(code_min_length >= 0 and code_min_length <= 10)
   ,code_max_length                 smallint                        check(code_max_length >= 0 and code_max_length <= 10)
   ,code_format                     varchar(255)
   ,description_mandatory           boolean                not null
-  ,created_by                      varchar(30)            not null
+  ,created_by                      varchar(30)            not null check(length(created_by) > 0)
   ,created_at                      timestamp              not null
-  ,updated_by                      varchar(30)            not null
+  ,updated_by                      varchar(30)            not null check(length(updated_by) > 0)
   ,updated_at                      timestamp              not null
   ,check(min_code_length <= max_code_length)
   );
