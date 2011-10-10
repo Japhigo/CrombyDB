@@ -4,7 +4,7 @@ select rlm.register_component('SEC', 'tab_users.sql');
 
 create table sec.users
   (id                              serial                 primary key
-  ,party_person_id                 int                    not null references cin.party_persons(id)
+  ,party_person_id                 int                    not null --references cin.party_persons(id)
   ,user_name                       varchar(30)            not null
   ,user_uuid                       uuid                   not null
   ,hashed_password                 text                   not null
