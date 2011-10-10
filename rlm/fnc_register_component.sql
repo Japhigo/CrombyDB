@@ -1,14 +1,14 @@
 \qecho Creating function register_component
 
 create or replace function rlm.register_component
-  (p_component_type_code  char(3)
+  (p_component_type_code  varchar(3)
   ,p_component_name       varchar(255)
   )
   returns void
 as $$
   declare
 
-    v_db_release_id      int;
+    v_db_release_id  int;
 
     c_drl cursor
     for
@@ -32,7 +32,7 @@ as $$
       (v_db_release_id
       ,p_component_type_code
       ,p_component_name
-      , session_user
+      ,session_user
       );
 
   end;

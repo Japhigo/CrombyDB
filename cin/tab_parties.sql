@@ -6,12 +6,11 @@ create table cin.parties
   (id                              serial                 primary key
   ,reference                       varchar(30)
   ,name                            varchar(255)
-  ,party_object_type_code          varchar(3)             not null check(party_object_type_code in ('GRP', 'PER', 'ORG'))
+  ,party_object_type_id            int                    not null references cin.party_object_types(id)
   ,party_type_id                   int                             references cin.party_types(id)
   ,communication_language_id       int                             references cin.communication_languages(id)
   ,party_classification_id         int                             references cin.party_classifications(id)
   ,description                     varchar(255)
-  ,internal                        boolean                not null
   ,created_by                      varchar(30)            not null
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null

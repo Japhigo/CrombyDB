@@ -70,8 +70,8 @@ select rlm.mark_release_complete();
 
 \qecho displaying installed components
 
-select * from vw_db_releases;
+select * from vw_db_releases where id = (select max(id) from vw_db_releases);
 
-select * from vw_db_release_components order by start_date_time;
+select * from vw_db_release_components where db_release_id = (select max(id) from vw_db_releases) order by start_date_time;
 
 \qecho Install finished

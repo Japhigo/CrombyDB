@@ -17,7 +17,7 @@ comment on column sec.controllers_by_system_role.id is 'Unique identifier for ro
 comment on column sec.controllers_by_system_role.controller_id is 'Foreign key to the Controllers table.';
 comment on column sec.controllers_by_system_role.system_role_id is 'Foreign key to the System Roles table.';
 comment on column sec.controllers_by_system_role.created_by is 'Username of the user who created the record.';
-comment on column sec.controllers_by_system_role.created_at is 'Date and time created.';
+comment on column sec.controllers_by_system_role.created_at is 'Date and time the record was created.';
 comment on column sec.controllers_by_system_role.updated_by is 'Username of user who last updated the record.';
 comment on column sec.controllers_by_system_role.updated_at is 'Date and time the record was last updated.';
 
