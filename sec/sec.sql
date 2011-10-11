@@ -9,10 +9,6 @@ create schema sec;
 comment on schema sec is '@DOCBOOK Security objects to handle users, passwords and user roles.';
 	
 --
--- Domains
---
-
---
 -- Tables
 --
 \i tab_controllers.sql
@@ -93,6 +89,6 @@ comment on schema sec is '@DOCBOOK Security objects to handle users, passwords a
 
 \i ins_initial_users.sql
  
-select rlm.component_registered('sec.sql');
+select rlm.component_registered('SEC', 'sec.sql');
 
 \qecho Security component installed

@@ -7,6 +7,9 @@ create or replace function sec.bur_sec_audit()
 as $bur_sec_audit$
   begin
 
+    new.created_by := old.created_by;
+    new.created_at := old.created_at;
+    
     if new.updated_by is null
     then
       new.updated_by := session_user;

@@ -10,7 +10,7 @@ create table sec.controllers
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
-  ,unique(controller)
+  ,unique(upper(controller))
   );
 
 comment on table sec.controllers is '@DOCBOOK Rails controllers for authorisation.';
