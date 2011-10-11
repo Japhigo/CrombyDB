@@ -1,4 +1,4 @@
-\qecho Creating BUR trigger for default_roles
+\qecho Creating BUR trigger for controllers_by_system_role
 
 select rlm.register_component('SEC', 'trg_bur_controllers_by_system_role.sql');
 
@@ -7,4 +7,4 @@ create trigger bur_controllers_by_system_role before update on sec.controllers_b
 
 comment on trigger bur_controllers_by_system_role on sec.controllers_by_system_role is '@DOCBOOK Before Update Row to check audit columns';
 
-select rlm.component_registered('trg_bur_controllers_by_system_role.sql');
+select rlm.component_registered('SEC', 'trg_bur_controllers_by_system_role.sql');

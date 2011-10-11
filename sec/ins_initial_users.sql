@@ -145,6 +145,6 @@ insert into sec.user_roles
      and rol.role_name = 'employee_admin';
 commit;
 
-select rlm.component_registered('ins_initial_users.sql');
+select rlm.component_registered('SEC', 'ins_initial_users.sql');
 
 \qecho Initial users inserted

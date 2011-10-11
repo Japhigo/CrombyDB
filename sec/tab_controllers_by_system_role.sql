@@ -1,4 +1,4 @@
-\qecho Creating table controllers
+\qecho Creating table controllers_by_system_role
 
 select rlm.register_component('SEC', 'tab_controllers_by_system_role.sql');
 

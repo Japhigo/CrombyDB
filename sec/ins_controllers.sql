@@ -8,6 +8,6 @@ insert into sec.controllers(controller, description) values ('ref_data_tables', 
 insert into sec.controllers(controller, description) values ('genders', 'Maintain Genders Table');
 commit;
 
-select rlm.component_registered('ins_controllers.sql');
+select rlm.component_registered('SEC', 'ins_controllers.sql');
 
 \qecho Controllers inserted

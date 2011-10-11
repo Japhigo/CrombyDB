@@ -15,8 +15,6 @@ as $bir_users$
 
     select uuid_generate_v1() into new.user_uuid;
 
-    new.account_locked := false;
-
     if new.created_by is null
     then
       new.created_by := v_user;
@@ -35,4 +33,6 @@ as $bir_users$
   end;
 $bir_users$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_bir_users.sql');
+comment on function sec.bir_users() is '@DOCBOOK Before Insert Row trigger to populate columns in <link linkend="sec-table-users">USERS.</link>.';
+
+select rlm.component_registered('SEC', 'fnc_trg_bir_users.sql');

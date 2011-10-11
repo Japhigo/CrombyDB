@@ -30,5 +30,7 @@ as $bur_users$
   end;
 $bur_users$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_bur_users.sql');
+comment on function sec.aur_users() is '@DOCBOOK After Update Row trigger to populate <link linkend="sec-table-user_password_histories">USER_PASSWORD_HISTORIES.</link>.';
+
+select rlm.component_registered('SEC', 'fnc_trg_bur_users.sql');
 

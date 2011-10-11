@@ -25,4 +25,6 @@ as $bur_sec_audit$
   end;
 $bur_sec_audit$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_bur_sec_audit.sql');
+comment on function sec.bur_sec_audit() is '@DOCBOOK Before Update Row trigger to populate audit columns.';
+
+select rlm.component_registered('SEC', 'fnc_trg_bur_sec_audit.sql');

@@ -10,6 +10,6 @@ insert into sec.system_roles(role_name, description) values ('system_admin', 'Cr
 insert into sec.system_roles(role_name, description) values ('cromby_user', 'Cromby User');
 commit;
 
-select rlm.component_registered('ins_system_roles.sql');
+select rlm.component_registered('SEC', 'ins_system_roles.sql');
 
 \qecho System Roles inserted
