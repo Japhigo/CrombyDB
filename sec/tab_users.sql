@@ -22,7 +22,7 @@ create table sec.users
 
 comment on table sec.users is '@DOCBOOK Cromby users.';
 comment on column sec.users.id is '@DOCBOOK Unique identifier for row.';
-comment on column sec.users.party_person_id is 'Foreign key to <link linkend="cin-table-party_persons">PARTY_PERSONS.</link>';
+comment on column sec.users.party_person_id is '@DOCBOOK Foreign key to <link linkend="cin-table-party_persons">PARTY_PERSONS.</link>';
 comment on column sec.users.user_name is '@DOCBOOK Unique username used to log on to Cromby.';
 comment on column sec.users.user_uuid is '@DOCBOOK Unique UUID used to identify a user.';
 comment on column sec.users.hashed_password is '@DOCBOOK Password encrypted using Bcrypt.';

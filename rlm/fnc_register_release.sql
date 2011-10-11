@@ -44,3 +44,6 @@ as $$
 
   end;
 $$ language plpgsql;
+
+comment on function rlm.register_release() is '@DOCBOOK Function to mark start of the installation of a Cromby database release.';
+

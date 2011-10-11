@@ -34,7 +34,7 @@ as $$
 
     open c_drc
       (p_component_name
-	  ,p_component_type_code);
+      ,p_component_type_code);
     fetch c_drc into v_component_id;
     close c_drc;
 
@@ -45,4 +45,8 @@ as $$
 
   end;
 $$ language plpgsql;
+
+comment on function rlm.component_registered
+  (p_component_type_code  varchar(3)
+  ,p_component_name  varchar(255)) is '@DOCBOOK Function to mark the installation of a Cromby database object as complete.';
 

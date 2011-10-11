@@ -26,3 +26,5 @@ as $$
   end;
 $$ language plpgsql;
 
+comment on function rlm.mark_release_complete() is '@DOCBOOK Function to mark the installation of a Cromby database release as complete.';
+

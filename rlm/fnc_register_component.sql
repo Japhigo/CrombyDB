@@ -38,4 +38,7 @@ as $$
   end;
 $$ language plpgsql;
 
+comment on function rlm.register_component
+  (p_component_type_code  varchar(3)
+  ,p_component_name  varchar(255)) is '@DOCBOOK Function to mark the start of the installation of a Cromby database object.';
 

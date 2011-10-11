@@ -4,6 +4,8 @@
 
 create schema rlm;
 	
+comment on schema rlm is '@DOCBOOK Security objects to handle Cromby database object release management.';
+	
 \i tab_db_releases.sql
 
 \i fnc_register_release.sql

@@ -15,7 +15,7 @@ create table sec.controllers
 
 comment on table sec.menus is '@DOCBOOK Menus.';
 comment on column sec.menus.id is '@DOCBOOK Unique identifier for row.';
-comment on column sec.menus.menu_set_id is 'Foreign key to <link linkend="sec-table-menu_sets">MENU_SETS.</link>';
+comment on column sec.menus.menu_set_id is '@DOCBOOK Foreign key to <link linkend="sec-table-menu_sets">MENU_SETS.</link>';
 comment on column sec.menus.menu_name is '@DOCBOOK Descriptive menu name.';
 comment on column sec.menus.created_by is '@DOCBOOK Username of the user who created the record.';
 comment on column sec.menus.created_at is '@DOCBOOK Date and time the record was created.';
