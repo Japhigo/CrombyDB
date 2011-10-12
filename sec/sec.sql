@@ -106,6 +106,11 @@ comment on schema sec is '@DOCBOOK Security objects to handle users, passwords a
 
 \i ins_menus.sql
 
+--
+-- grants
+--
+\i sec_grants.sql
+
 select rlm.component_registered('SEC', 'sec.sql');
 
 \qecho Security component installed

@@ -11,7 +11,6 @@ as
         ,usr.user_name
         ,usr.hashed_password
         ,usr.salt
-        ,usr.account_locked
         ,usr.password_expiry_date - current_date as days_until_password_expiry
     from sec.users usr join
          cin.party_persons per on per.id = usr.party_person_id join
@@ -21,4 +20,4 @@ as
 
 comment on view public.vw_users is '@DOCBOOK User information for logging on.';
 
-select rlm.component_registered('viw_users.sql');
+select rlm.component_registered('PUB', 'viw_users.sql');

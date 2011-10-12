@@ -46,6 +46,8 @@ values
 \i rlm.sql
 
 \cd ..
+\i db_roles.sql
+
 \cd cin
 \i cin.sql
 
@@ -59,8 +61,6 @@ values
 
 \cd ..
 \qecho Components installed
-
---\i permissions.sql
 
 \qecho Cleaning up
 

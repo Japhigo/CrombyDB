@@ -10,6 +10,8 @@ create table sec.controllers_by_system_role
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
+  ,unique(controller_id
+         ,system_role_id)
   );
 
 comment on table sec.controllers_by_system_role is '@DOCBOOK Rails controllers available to a System Role.';
