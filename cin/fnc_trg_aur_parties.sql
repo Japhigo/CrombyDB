@@ -40,9 +40,14 @@ as $aur_parties$
       ,old.data_status_code
       );
 
+    perform wkf.register_object_event
+      ('PARTY'
+      ,old.id
+      ,'UPD');
+
     return new;
 
   end;
 $bur_parties$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_aur_parties.sql');
+select rlm.component_registered('CIN', 'fnc_trg_aur_parties.sql');

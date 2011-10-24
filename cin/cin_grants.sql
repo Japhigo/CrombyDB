@@ -1,10 +1,6 @@
 \qecho Creating permissions...
 
-select rlm.register_component('SEC', 'permissions.sql');
-
-\qecho Create role ref_data_admin
-
-create role ref_data_admin nologin inherit;
+select rlm.register_component('CIN', 'cin_grants.sql');
 
 \qecho Assign permissions to ref_data_admin
 
@@ -38,12 +34,6 @@ grant select, insert, update on cin.relationship_statuses to ref_data_admin;
 grant select, insert, update on cin.relationship_types to ref_data_admin;
 grant select, insert, update on cin.telephone_connection_types to ref_data_admin;
 
-grant ref_data_admin to am_user;
-
-\qecho Create role employee_admin
-
-create role employee_admin nologin inherit;
-
 \qecho Assign permissions to employee_admin
 
 grant select, insert, update on cin.parties to employee_admin;
@@ -53,16 +43,6 @@ grant select, insert, update on cin.party_role_types to employee_admin;
 grant select, insert, update on cin.party_roles to employee_admin;	
 grant select, insert, update on cin.party_relationships to employee_admin;	
 
-grant employee_admin to am_user;
-
-create role security_admin nologin inherit;
-
-
-create role system_admin nologin inherit;
-create role cromby_user nologin inherit;
-create role cromby_login nologin inherit;
-create role cromby_archivist nologin inherit;
-		
-select rlm.component_registered('permissions.sql');
+select rlm.component_registered('CIN', 'cin_grants.sql');
 
 \qecho Permissions created

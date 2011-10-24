@@ -19,4 +19,4 @@ create table cin.parties
   ,unique(reference)
   );
 
-select rlm.component_registered('tab_parties.sql');
+select rlm.component_registered('CIN', 'tab_parties.sql');

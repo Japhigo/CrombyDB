@@ -6,6 +6,8 @@ select rlm.register_component('CIN', 'cin.sql');
 
 create schema cin;
 	
+comment on schema cin is '@DOCBOOK Customer Intelligence objects.';
+
 --
 -- Cromby system tables
 --
@@ -308,6 +310,6 @@ create schema cin;
 
 --\i ins_match_statuses.sql
 
-select rlm.component_registered('cin.sql');
+select rlm.component_registered('CIN', 'cin.sql');
 
 \qecho Customer Intelligence component installed

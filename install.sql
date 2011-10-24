@@ -46,8 +46,10 @@ values
 \i rlm.sql
 
 \cd ..
-\i db_roles.sql
+\cd wkf
+\i wkf.sql
 
+\cd ..
 \cd cin
 \i cin.sql
 

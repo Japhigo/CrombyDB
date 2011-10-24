@@ -9,6 +9,9 @@ create role baron with login password 'baron' createrole;
 create role am_user with login password 'am_user' noinherit;
 create role um_user with login password 'um_user' noinherit;
 create role batch_user with login password 'batch_user' noinherit;
+
+\i db_roles.sql
+
 --
 select * from pg_user;    -- verify user created
 select * from pg_shadow;  -- sysid listed here

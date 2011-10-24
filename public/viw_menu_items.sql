@@ -7,7 +7,7 @@ as
   select ctr.controller
         ,ctr.description
         ,mei.id
-        ,mei.menu_id
+        ,mei.menu_id as vw_menu_id
     from sec.menu_items mei join
          sec.controllers ctr on ctr.id = mei.controller_id;
 
