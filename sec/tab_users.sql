@@ -16,7 +16,6 @@ create table sec.users
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
-  ,unique(upper(user_name))
   ,unique(user_uuid)
   );
 

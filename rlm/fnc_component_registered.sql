@@ -17,7 +17,7 @@ as $$
       select id
         from rlm.db_release_components
        where component_name = p_name
-         and component_type = p_type
+         and component_type_code = p_type
        order by id desc;
 
     c_drl cursor

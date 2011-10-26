@@ -4,8 +4,8 @@ select rlm.register_component('SEC', 'tab_security_controls.sql');
 
 create table sec.security_controls
   (days_until_password_expiry      int                    not null check(days_until_password_expiry >= 7 and days_until_password_expiry <= 90)
-  ,min_password_length             int                    not null check(min_password_length >= 8 and code_min_length <= 30)
-  ,max_password_length             int                    not null check(max_password_length >= 8 and code_max_length <= 30)
+  ,min_password_length             int                    not null check(min_password_length >= 8 and min_password_length <= 30)
+  ,max_password_length             int                    not null check(max_password_length >= 8 and max_password_length <= 30)
   ,password_history_count          int                    not null check(password_history_count >= 3 and password_history_count <= 99)
   ,lock_after_failed_attempts      int                    not null check(lock_after_failed_attempts >= 1 and lock_after_failed_attempts <= 99)
   ,created_by                      varchar(30)            not null

@@ -10,7 +10,6 @@ create table sec.system_roles
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
-  ,unique(upper(role_name))
   );
 
 comment on table sec.system_roles is '@DOCBOOK System roles grouping available functionality.';
