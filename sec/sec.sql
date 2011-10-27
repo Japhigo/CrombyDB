@@ -43,6 +43,11 @@ comment on schema sec is '@DOCBOOK Security objects to handle users, passwords a
 \i idx_system_roles.sql
 
 \i idx_users.sql
+
+\i idx_menu_sets.sql
+
+\i idx_menus.sql
+
 --
 -- Functions
 --

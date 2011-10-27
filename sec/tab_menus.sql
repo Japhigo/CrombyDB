@@ -2,7 +2,7 @@
 
 select rlm.register_component('SEC', 'tab_menus.sql');
 
-create table sec.controllers
+create table sec.menus
   (id                              serial                 primary key
   ,menu_set_id                     int                    not null --references sec.menu_sets(id)
   ,menu_name                       varchar(255)           not null check(length(menu_name) > 0)
@@ -10,7 +10,6 @@ create table sec.controllers
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
-  ,unique(upper(menu_name))
   );
 
 comment on table sec.menus is '@DOCBOOK Menus.';

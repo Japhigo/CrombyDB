@@ -2,7 +2,7 @@
 
 select rlm.register_component('SEC', 'tab_menu_items.sql');
 
-create table sec.controllers
+create table sec.menu_items
   (id                              serial                 primary key
   ,menu_id                         int                    not null --references sec.menus(id)
   ,controller_id                   int                    not null --references sec.controllers(id)
@@ -14,9 +14,9 @@ create table sec.controllers
          ,controller_id)
   );
 
-comment on table sec.menu_items is '@DOCBOOK Menus.';
+comment on table sec.menu_items is '@DOCBOOK Menu items; a controller on a menu.';
 comment on column sec.menu_items.id is '@DOCBOOK Unique identifier for row.';
-comment on column sec.menu_items.menu_id is '@DOCBOOK Foreign key to <link linkend="sec-table-menu_sets">MENU_SETS.</link>';
+comment on column sec.menu_items.menu_id is '@DOCBOOK Foreign key to <link linkend="sec-table-menus">MENUS.</link>';
 comment on column sec.menu_items.controller_id is '@DOCBOOK Foreign key to <link linkend="sec-table-controllers">CONTROLLERS.</link>';
 comment on column sec.menu_items.created_by is '@DOCBOOK Username of the user who created the record.';
 comment on column sec.menu_items.created_at is '@DOCBOOK Date and time the record was created.';

@@ -2,14 +2,13 @@
 
 select rlm.register_component('SEC', 'tab_menu_sets.sql');
 
-create table sec.controllers
+create table sec.menu_sets
   (id                              serial                 primary key
   ,menu_set_name                   varchar(255)           not null check(length(menu_set_name) > 0)
   ,created_by                      varchar(30)            not null
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
-  ,unique(upper(menu_set_name))
   );
 
 comment on table sec.menu_sets is '@DOCBOOK Set of menus.';
