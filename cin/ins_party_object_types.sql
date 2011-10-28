@@ -11,6 +11,6 @@ insert into cin.party_object_types(party_object_type_code, internal) values ('GR
 insert into cin.party_object_types(party_object_type_code, internal) values ('ORG', false);
 commit;
 
-select rlm.component_registered('ins_party_object_types.sql');
+select rlm.component_registered('CIN', 'ins_party_object_types.sql');
 
 \qecho Party Object Types inserted

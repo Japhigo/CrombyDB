@@ -14,6 +14,12 @@ comment on schema rlm is '@DOCBOOK Security objects to handle Cromby database ob
 
 select rlm.register_release();
 
+\i tab_db_component_areas.sql
+
+\i idx_db_component_areas.sql
+
+\i ins_db_component_areas.sql
+
 \i tab_db_release_components.sql
 
 \i fnc_register_component.sql

@@ -1,4 +1,4 @@
-\qecho Creating table tab_party_object_types
+\qecho Creating table party_object_types
 
 select rlm.register_component('CIN', 'tab_party_object_types.sql');
 
@@ -15,4 +15,4 @@ create table cin.party_object_types
           )
   );
 
-select rlm.component_registered('tab_party_object_types.sql');
+select rlm.component_registered('CIN', 'tab_party_object_types.sql');

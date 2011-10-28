@@ -31,4 +31,4 @@ create table cin.party_persons
   ,unique(party_id)
   );
 
-select rlm.component_registered ('tab_party_persons.sql');
+select rlm.component_registered ('CIN', 'tab_party_persons.sql');

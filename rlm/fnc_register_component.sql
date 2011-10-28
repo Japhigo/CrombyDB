@@ -8,7 +8,8 @@ create or replace function rlm.register_component
 as $$
   declare
 
-    v_db_release_id  int;
+    v_db_component_area_id  int;
+    v_db_release_id         int;
 
     c_drl cursor
     for
@@ -16,21 +17,32 @@ as $$
         from rlm.db_releases
        order by id desc;
 
+    c_dca cursor
+      (p_type  varchar(3))
+    for
+      select id
+        from db_component_areas
+       where component_area_code = p_type;
+
   begin
 
     open c_drl;
     fetch c_drl into v_db_release_id;
     close c_drl;
 
+    open c_dca(p_component_type_code);
+    fetch c_dca into v_db_component_area_id;
+    close c_dta;
+
     insert into rlm.db_release_components
       (db_release_id
-      ,component_type_code
+      ,db_component_area_id
       ,component_name
       ,installed_by
       )
     values
       (v_db_release_id
-      ,p_component_type_code
+      ,v_db_component_area_id
       ,p_component_name
       ,session_user
       );

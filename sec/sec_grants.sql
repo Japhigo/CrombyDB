@@ -21,7 +21,7 @@ grant select on sec.menu_items to security_admin;
 
 grant select, delete on sec.login_histories to security_admin;
 grant select, delete on sec.users to security_admin;
-grant select,delete on sec.user_password_histories to security_admin;
+grant select, delete on sec.user_password_histories to security_admin;
 grant select, delete on sec.controllers_by_system_role to security_admin;
 grant select, delete on sec.default_roles to security_admin;
 

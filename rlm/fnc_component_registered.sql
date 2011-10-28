@@ -11,13 +11,16 @@ as $$
     v_db_release_id  int;
 
     c_drc cursor
-      (p_name  varchar(255)
-      ,p_type  varchar(3))
+      (p_name        varchar(255)
+      ,p_type        varchar(3)
+      ,p_release_id  int)
     is
       select id
-        from rlm.db_release_components
-       where component_name = p_name
-         and component_type_code = p_type
+        from rlm.db_release_components drc join
+             rlm.db_component_areas dca using dca.id = drc.db_component_area_id
+       where drc.db_release_id = p_release_id 
+         and drc.component_name = p_name
+         and dca.component_area_code = p_type
        order by id desc;
 
     c_drl cursor
@@ -34,14 +37,14 @@ as $$
 
     open c_drc
       (p_component_name
-      ,p_component_type_code);
+      ,p_component_type_code
+      ,v_db_release_id);
     fetch c_drc into v_component_id;
     close c_drc;
 
     update rlm.db_release_components
        set end_date_time = current_timestamp
-     where id = v_component_id
-       and db_release_id = v_db_release_id;
+     where id = v_component_id;
 
   end;
 $$ language plpgsql;
