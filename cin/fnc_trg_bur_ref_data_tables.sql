@@ -24,8 +24,8 @@ as $bur_ref_data_tables$
     return new;
 
   end;
-$bir_ref_data_tables$ LANGUAGE plpgsql;
+$bur_ref_data_tables$ LANGUAGE plpgsql;
 
-comment on function cin.bur_ref_data_tables() is '@DOCBOOK Controls columns updated and sets audit columns.';
+comment on function cin.bur_ref_data_tables() is '@DOCBOOK Brefore Update Trigger on REF_DATA_TABLES to control columns updated and set audit columns.';
 
-select rlm.component_registered('fnc_trg_bir_ref_data_tables.sql');
+select rlm.component_registered('CIN', 'fnc_trg_bir_ref_data_tables.sql');

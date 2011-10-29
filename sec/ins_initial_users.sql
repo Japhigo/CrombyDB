@@ -4,6 +4,7 @@ select rlm.register_component('SEC', 'ins_initial_users.sql');
 
 \qecho Insert System Administrator
 begin;
+
 insert into cin.parties
   (name
   ,internal

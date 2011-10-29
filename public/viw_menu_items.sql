@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_menu_items.sql');
 
-create or replace view public.vw_users
+create or replace view public.vw_menu_items
 as
   select ctr.controller
         ,ctr.description
@@ -11,6 +11,6 @@ as
     from sec.menu_items mei join
          sec.controllers ctr on ctr.id = mei.controller_id;
 
-comment on view public.vw_users is '@DOCBOOK Cromby Menu items.';
+comment on view public.vw_menu_items is '@DOCBOOK Cromby Menu items.';
 
 select rlm.component_registered('PUB', 'viw_menu_items.sql');

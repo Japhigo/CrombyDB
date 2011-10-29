@@ -45,4 +45,6 @@ as $bir_ref_data_tables$
   end;
 $bir_ref_data_tables$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_bir_ref_data_tables.sql');
+comment on function cin.bir_ref_data_tables() is '@DOCBOOK Before Insert Row trigger on REF_DATA_TABLES to check audit columns and set default values.';
+
+select rlm.component_registered('CIN', 'fnc_trg_bir_ref_data_tables.sql');

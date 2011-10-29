@@ -2,13 +2,13 @@
 
 select rlm.register_component('SEC', 'tab_login_histories.sql');
 
-create table sec.user_login_histories
+create table sec.login_histories
   (id                              serial                 primary key
   ,user_name                       varchar(255)           not null check(length(user_name) > 0)
   ,login_successful                boolean                not null
   ,user_known                      boolean                not null
-  ,session_user_name               name
-  ,current_user_name               name
+  ,session_user_name               text
+  ,current_user_name               text
   ,client_address                  text
   ,created_by                      varchar(30)            not null
   ,created_at                      timestamp              not null

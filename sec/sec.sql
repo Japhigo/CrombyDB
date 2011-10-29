@@ -113,11 +113,13 @@ comment on schema sec is '@DOCBOOK Security objects to handle users, passwords a
  
 \i ins_controllers.sql
 
-\i ins_initial_users.sql
-
 \i ins_menu_sets.sql
 
 \i ins_menus.sql
+
+\i ins_menu_items.sql
+
+\i ins_initial_users.sql
 
 --
 -- grants

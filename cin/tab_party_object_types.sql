@@ -11,7 +11,7 @@ create table cin.party_object_types
   ,updated_by                      varchar(30)            not null
   ,updated_at                      timestamp              not null
   ,unique (party_object_type_code
-	  ,internal
+          ,internal
           )
   );
 

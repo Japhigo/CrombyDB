@@ -15,5 +15,12 @@ create table public.sessions
   ,updated_at                      timestamp
   );
 
-select rlm.component_registered('tab_sessions.sql');
+comment on table public.sessions is '@DOCBOOK Rails session data.';
+comment on column public.sessions.id is '@DOCBOOK Unique identifier for row.';
+comment on column public.sessions.session_id is '@DOCBOOK Rails session ID.';
+comment on column public.sessions.data is '@DOCBOOK Rails session data.';
+comment on column public.sessions.created_at is '@DOCBOOK Date and time the record was created.';
+comment on column public.sessions.updated_at is '@DOCBOOK Date and time the record was last updated.';
+
+select rlm.component_registered('PUB', 'tab_sessions.sql');
 

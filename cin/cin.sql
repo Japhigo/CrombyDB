@@ -22,6 +22,8 @@ comment on schema cin is '@DOCBOOK Customer Intelligence objects.';
 
 \i tab_ref_data_load_rows.sql
 
+\i tab_party_object_types.sql
+
 --
 -- reference data tables
 --

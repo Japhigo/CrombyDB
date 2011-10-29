@@ -15,7 +15,7 @@ create table cin.ref_data_tables
   ,created_at                      timestamp              not null
   ,updated_by                      varchar(30)            not null check(length(updated_by) > 0)
   ,updated_at                      timestamp              not null
-  ,check(min_code_length <= max_code_length)
+  ,check(code_min_length <= code_max_length)
   );
 
 comment on table cin.ref_data_tables is 'Reference Data Table information and validation rules.';
@@ -32,4 +32,4 @@ comment on column cin.ref_data_tables.created_at is 'Date and time created.';
 comment on column cin.ref_data_tables.updated_by is 'Username of user who last updated the record.';
 comment on column cin.ref_data_tables.updated_at is 'Date and time the record was last updated.';
 
-select rlm.component_registered('tab_ref_data_tables.sql');
+select rlm.component_registered('CIN', 'tab_ref_data_tables.sql');

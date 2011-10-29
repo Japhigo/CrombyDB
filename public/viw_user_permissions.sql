@@ -2,7 +2,7 @@
 
 select rlm.register_component('PUB', 'viw_user_permissions.sql');
 
-create or replace view public.vw_users
+create or replace view public.vw_user_permissions
 as
   select usr.user_uuid
         ,ctr.controller
@@ -15,6 +15,6 @@ as
      and current_date >= uro.user_role_start_date
      and current_date <= coalesce(uro.user_role_end_date, current_date);
 
-comment on view public.vw_users is '@DOCBOOK Controllers available to a user.';
+comment on view public.vw_user_permissions is '@DOCBOOK Controllers available to a user.';
 
 select rlm.component_registered('PUB', 'viw_user_permissions.sql');

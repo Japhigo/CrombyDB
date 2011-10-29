@@ -1,6 +1,6 @@
 \qecho Inserting Reference Data Table defaults...
 
-select rlm.register_component ( 'CIN', 'ins_ref_data_tables.sql' );
+select rlm.register_component('CIN', 'ins_ref_data_tables.sql');
 
 begin;
 insert into cin.ref_data_tables ( table_name, description, code_mandatory, code_min_length, code_max_length, code_format, description_mandatory)
@@ -16,6 +16,6 @@ insert into cin.ref_data_tables ( table_name,  description, code_mandatory, code
 
 commit;
 
-select rlm.component_registered ( 'ins_ref_data_tables.sql' );
+select rlm.component_registered('CIN', 'ins_ref_data_tables.sql');
 
 \qecho Reference Data Table defaults inserted
