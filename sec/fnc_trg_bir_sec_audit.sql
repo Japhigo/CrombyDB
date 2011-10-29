@@ -17,15 +17,8 @@ as $bir_sec_audit$
       new.updated_by := session_user;
     end if;
 
-    if new.created_at is null
-    then
-      new.created_at := current_timestamp;
-    end if;
-
-    if new.updated_at is null
-    then
-      new.updated_at := current_timestamp;
-    end if;
+    new.created_at := current_timestamp;
+    new.updated_at := current_timestamp;
 
     return new;
 

@@ -15,10 +15,7 @@ as $bur_sec_audit$
       new.updated_by := session_user;
     end if;
 
-    if new.updated_at is null
-    then
-      new.updated_at := current_timestamp;
-    end if;
+    new.updated_at := current_timestamp;
 
     return new;
 

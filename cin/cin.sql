@@ -310,6 +310,8 @@ comment on schema cin is '@DOCBOOK Customer Intelligence objects.';
 
 \i ins_ref_data_tables.sql
 
+\i ins_party_object_types.sql
+
 --\i ins_match_statuses.sql
 
 select rlm.component_registered('CIN', 'cin.sql');

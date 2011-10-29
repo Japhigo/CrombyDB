@@ -10,8 +10,17 @@ as $bur_data_statuses$
     select cin.calc_data_status_code
       (old.data_status_code
       ,new.data_status_code
+      ,new.effective_from_date
+      ,old.effective_to_date
+      ,new.effective_to_date
       )
       into new.data_status_code;
+
+    --
+    -- Ensure these values are not updated
+    -- 
+    new.created_by := old.created_by;
+    new.created_at := old.created_at;
 
     if new.updated_by is null
     then
@@ -25,4 +34,6 @@ as $bur_data_statuses$
   end;
 $bur_data_statuses$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_bur_data_statuses.sql');
+comment on function cin.bur_data_statuses() is '@DOCBOOK Before Update Row trigger to populate audit columns and set the data status code.';
+
+select rlm.component_registered('CIN', 'fnc_trg_bur_data_statuses.sql');

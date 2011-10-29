@@ -12,6 +12,11 @@ as $bir_data_statuses$
       new.data_status_code := 1;
     end if;
 
+    if new.effective_from_date is null
+    then
+      new.effective_from_date := current_date;
+    end if;
+
     if new.created_by is null
     then
       new.created_by := session_user;
@@ -30,4 +35,6 @@ as $bir_data_statuses$
   end;
 $bir_data_statuses$ LANGUAGE plpgsql;
 
-select rlm.component_registered ('fnc_trg_bir_data_statuses.sql');
+comment on function cin.bir_data_statuses() is '@DOCBOOK Before Insert Row trigger to populate audit and data status columns.';
+
+select rlm.component_registered('CIN', 'fnc_trg_bir_data_statuses.sql');

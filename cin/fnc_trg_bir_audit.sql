@@ -25,4 +25,6 @@ as $bir_audit$
   end;
 $bir_audit$ LANGUAGE plpgsql;
 
-select rlm.component_registered('fnc_trg_bir_audit.sql');
+comment on function cin.bir_audit() is '@DOCBOOK Before Insert Row trigger to populate audit columns.';
+
+select rlm.component_registered('CIN', 'fnc_trg_bir_audit.sql');
