@@ -3,9 +3,8 @@
 select rlm.register_component('PUB', 'fnc_upd_user_password.sql');
 
 create or replace function public.upd_user_password
-  (p_hashed_password  text
-  ,p_salt             text
-  ,p_user_uuid        uuid
+  (p_user_id  int
+  ,p_password_digest  text
   )
   returns void
   security definer
@@ -13,7 +12,6 @@ as $$
   declare
 
     v_password_history_count  int := 0;
-    v_user_id                 int;
 
     c_sec cursor
     for
@@ -22,13 +20,6 @@ as $$
         from sec.security_controls;
 
     r_security_controls  record;
-
-    c_usr cursor
-      (p_user_uuid  uuid)
-    for
-      select id
-        from sec.users usr
-       where usr.user_uuid = p_user_uuid;
 
     c_uph cursor
       (p_user_id  int)
@@ -40,16 +31,8 @@ as $$
 
   begin
 
-    open c_sec;
-    fetch c_sec into r_security_controls;
-    close c_sec;
-
-    open c_usr(p_user_uuid);
-    fetch c_usr into v_user_id;
-    close c_usr;
-
     for r_uph in c_uph
-      (v_user_id)
+      (p_user_id)
     loop
       v_password_history_count := v_password_history_count + 1;
       if v_password_history_count >= r_security_controls.password_history_count

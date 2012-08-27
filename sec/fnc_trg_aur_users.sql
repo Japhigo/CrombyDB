@@ -11,15 +11,13 @@ as $bur_users$
     then
       insert into sec.user_password_histories
         (user_id
-        ,hashed_password
-        ,salt
+        ,password_digest
         ,created_by
         ,created_at
         )
       values
         (old.id
-        ,old.hashed_password
-        ,old.salt
+        ,old.password_digest
         ,new.updated_by
         ,current_timestamp
         );

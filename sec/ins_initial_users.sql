@@ -36,14 +36,12 @@ insert into sec.users
   (party_person_id
   ,user_name
   ,hashed_password
-  ,salt
   ,password_expiry_date
   ,user_start_date
   )
   select id
         ,'sysadmin'
         ,'$2a$10$BmfIc.6RA/3tHflOpbEMEeB1inyfcEPu6cI3q0AaHp1VbOWZI1YEK'
-        ,'$2a$10$BmfIc.6RA/3tHflOpbEMEe'
         ,current_date - 1
         ,current_date
     from cin.party_persons
@@ -112,14 +110,12 @@ insert into sec.users
   (party_person_id
   ,user_name
   ,hashed_password
-  ,salt
   ,password_expiry_date
   ,user_start_date
   )
   select id
         ,'usradmin'
         ,'$2a$10$mgb2JXit29SmmRa8WnxKquGGNqfFB4wkUDVc0m1iNoUdkcL.rAHZu'
-        ,'$2a$10$mgb2JXit29SmmRa8WnxKqu'
         ,current_date - 1
         ,current_date
     from cin.party_persons
