@@ -35,7 +35,7 @@ insert into cin.party_persons
 insert into sec.users
   (party_person_id
   ,user_name
-  ,hashed_password
+  ,password_digest
   ,password_expiry_date
   ,user_start_date
   )
@@ -109,7 +109,7 @@ insert into cin.party_persons
 insert into sec.users
   (party_person_id
   ,user_name
-  ,hashed_password
+  ,password_digest
   ,password_expiry_date
   ,user_start_date
   )

@@ -4,9 +4,9 @@ select rlm.register_component('PUB', 'viw_user_permissions.sql');
 
 create or replace view public.vw_user_permissions
 as
-  select usr.user_id
+  select ctr.id
         ,ctr.controller
-        ,ctr.id
+        ,usr.user_id
     from sec.users usr join
          sec.user_roles uro on uro.user_id = usr.id join
          sec.controllers_by_system_role csr on csr.system_role_id = uro.system_role_id join

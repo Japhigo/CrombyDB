@@ -4,9 +4,9 @@ select rlm.register_component('PUB', 'viw_menus.sql');
 
 create or replace view public.vw_menus
 as
-  select mes.menu_set_name
+  select men.id
         ,men.menu_name
-        ,men.id
+        ,mes.menu_set_name
     from sec.menu_sets mes join
          sec.menus men on men.menu_set_id = mes.id;
 
