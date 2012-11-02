@@ -14,10 +14,10 @@ as
         ,prt.updated_at
         ,prt.data_status_code
         ,das.description as data_status_desc
-        ,case when current_date between effective_from_date and coalesce(effective_to_date, current_date) then true
-           else false
-         end as available
-    from cin.party_role_types prt join cin.data_statuses das on prt.data_status_code = das.code;
+    from cin.party_role_types prt join cin.data_statuses das on prt.data_status_code = das.code
+   where current_date >= prt.effective_from_date
+     and current_date <= coalesce(prt.effective_to_date, current_date);
 
-select rlm.component_registered('viw_party_role_types.sql');
+comment on view public.vw_party_role_types is '@DOCBOOK View of current Party Role Types';
 
+select rlm.component_registered('PUB', 'viw_party_role_types.sql');

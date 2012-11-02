@@ -11,4 +11,4 @@ create table cin.data_statuses
   ,updated_at                      timestamp              not null
   );
 
-select rlm.component_registered('tab_data_statuses.sql');
+select rlm.component_registered('PUB', 'tab_data_statuses.sql');
