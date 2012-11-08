@@ -4,7 +4,6 @@ select rlm.register_component('CIN', 'fnc_ins_party_role_type.sql');
 
 create or replace function cin.ins_party_role_type
   (p_id                              int  
-  ,p_code                            varchar(10)
   ,p_display                         varchar(30)
   ,p_description                     varchar(255)
   ,p_party_object_type_id            int
@@ -22,7 +21,6 @@ as $$
 
     insert into cin.party_role_types
       (id
-      ,code
       ,display
       ,description
       ,party_object_type_id
@@ -36,7 +34,6 @@ as $$
       )
     values
       (p_id
-      ,p_code
       ,p_display
       ,p_description
       ,p_party_object_type_id

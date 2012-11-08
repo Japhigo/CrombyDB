@@ -4,11 +4,10 @@ select rlm.register_component('CIN', 'tab_party_role_types.sql');
 
 create table cin.party_role_types
   (id                              int                    primary key
-  ,code                            varchar(10)
-  ,display                         varchar(30)            not null
+  ,display                         varchar(30)            not null    check(length(display) > 0)
   ,description                     varchar(255)
   ,party_object_type_id            int                    not null --references cin.party_object_types(id)
-  ,effective_from_date             date                   not null
+  ,effective_from_date             date                   not null    check(effective_from_date >= current_date)
   ,effective_to_date               date
   ,created_by                      varchar(30)            not null
   ,created_at                      timestamp              not null
@@ -19,7 +18,6 @@ create table cin.party_role_types
 
 comment on table cin.party_role_types is '@DOCBOOK Types used to classify Party Roles.';
 comment on column cin.party_role_types.id is '@DOCBOOK Unique identifier for row.';
-comment on column cin.party_role_types.code is '@DOCBOOK Optional code to identify a Party Role Type.';
 comment on column cin.party_role_types.display is '@DOCBOOK Display name of Party Role Types for use on screens, lists etc.';
 comment on column cin.party_role_types.description is '@DOCBOOK Optional description of the Party Role Type''s purpose.';
 comment on column cin.party_role_types.party_object_type_id is '@DOCBOOK Foreign key to <link linkend="party_role_types">PARTY_ROLE_TYPES.</link>';

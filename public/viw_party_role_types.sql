@@ -5,7 +5,6 @@ select rlm.register_component('PUB', 'viw_party_role_types.sql');
 create or replace view public.vw_party_role_types
 as
   select prt.id
-        ,prt.code
         ,prt.display
         ,prt.description
         ,prt.created_by
