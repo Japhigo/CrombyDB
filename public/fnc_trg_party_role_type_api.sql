@@ -34,7 +34,7 @@ as $function$
         ,data_status_code
         )
       values
-        (public.role_types_id_seq.nextval
+        (nextval('public.role_types_id_seq'::regclass)
         ,new.display
         ,new.description
         ,v_party_object_type_id

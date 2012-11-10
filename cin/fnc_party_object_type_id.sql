@@ -17,7 +17,7 @@ as $$
       )
     for
       select id
-      from   cin.party_obect_types
+      from   cin.party_object_types
       where  party_object_type_code = p_party_object_type_code
       and    internal = p_internal;
 
