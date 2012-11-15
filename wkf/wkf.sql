@@ -11,6 +11,16 @@ comment on schema wkf is '@DOCBOOK Workflow objects.';
 --
 -- Tables
 --
+\i tab_object_event_types.sql
+
+\i tab_object_event_actions.sql
+
+\i tab_object_events_register.sql
+
+--
+-- indexes
+--
+\i idx_object_event_types.sql
 
 --
 -- functions

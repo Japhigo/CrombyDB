@@ -1,0 +1,109 @@
+Script started on Thu 15 Nov 2012 20:23:54 GMT
+]0;pip@hollis-henry: ~/prj/CrombyDBpip@hollis-henry:~/prj/CrombyDB$ exitpsql -U postgres -h localhostexit[K[Kpsql -U baron -d cromby_development -h localhos t
+Password for user baron: 
+psql (9.1.6)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+
+cromby_development=> \i cromby_install.sql[C[1Pinstall.sql[1Pinstall.sql[1Pinstall.sql[1Pinstall.sql[1Pinstall.sql[1Pinstall.sql[1Pinstall.sql
+psql:tab_db_releases.sql:18: NOTICE:  CREATE TABLE will create implicit sequence "db_releases_id_seq" for serial column "db_releases.id"
+psql:tab_db_releases.sql:18: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "db_releases_pkey" for table "db_releases"
+psql:tab_db_releases.sql:18: NOTICE:  CREATE TABLE / UNIQUE will create implicit index "db_releases_major_id_minor_id_sub_id_key" for table "db_releases"
+Registering the release
+psql:tab_db_component_areas.sql:11: NOTICE:  CREATE TABLE will create implicit sequence "db_component_areas_id_seq" for serial column "db_component_areas.id"
+psql:tab_db_component_areas.sql:11: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "db_component_areas_pkey" for table "db_component_areas"
+psql:tab_db_component_areas.sql:13: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:14: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:15: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:16: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:17: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:18: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:19: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:tab_db_component_areas.sql:20: ERROR:  relation "rlm.db_release_component_areas" does not exist
+psql:idx_db_component_areas.sql:5: ERROR:  syntax error at or near "rlm"
+LINE 1: comment on rlm.db_component_areas_component_area_code_idx is...
+                   ^
+psql:ins_db_component_areas.sql:5: ERROR:  schema "cin" does not exist
+LINE 1: insert into cin.party_object_types(component_area_code, desc...
+                    ^
+psql:ins_db_component_areas.sql:7: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+psql:ins_db_component_areas.sql:9: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+psql:ins_db_component_areas.sql:11: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+psql:ins_db_component_areas.sql:13: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+psql:ins_db_component_areas.sql:15: ERROR:  current transaction is aborted, commands ignored until end of transaction block
+psql:tab_db_release_components.sql:11: NOTICE:  CREATE TABLE will create implicit sequence "db_release_components_id_seq" for serial column "db_release_components.id"
+psql:tab_db_release_components.sql:11: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "db_release_components_pkey" for table "db_release_components"
+psql:fnc_register_component.sql:51: ERROR:  "c_dta" is not a known variable
+LINE 33:     close c_dta;
+                   ^
+psql:fnc_register_component.sql:55: ERROR:  function rlm.register_component(character varying, character varying) does not exist
+psql:fnc_component_registered.sql:50: ERROR:  syntax error at or near "dca"
+LINE 18:              rlm.db_component_areas dca using dca.id = drc.d...
+                                                       ^
+psql:fnc_component_registered.sql:54: ERROR:  function rlm.component_registered(character varying, character varying) does not exist
+psql:wkf.sql:3: ERROR:  function rlm.register_component(unknown, unknown) does not exist
+LINE 1: select rlm.register_component('WKF', 'wkf.sql');
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:tab_object_event_types.sql:3: ERROR:  function rlm.register_component(unknown, unknown) does not exist
+LINE 1: select rlm.register_component('WKF', 'tab_object_event_types...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:tab_object_event_types.sql:13: NOTICE:  CREATE TABLE will create implicit sequence "object_event_types_id_seq" for serial column "object_event_types.id"
+psql:tab_object_event_types.sql:13: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "object_event_types_pkey" for table "object_event_types"
+psql:tab_object_event_types.sql:24: ERROR:  function rlm.component_registered(unknown, unknown) does not exist
+LINE 1: select rlm.component_registered('WKF', 'tab_object_event_typ...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:tab_object_event_actions.sql:3: ERROR:  function rlm.register_component(unknown, unknown) does not exist
+LINE 1: select rlm.register_component('WKF', 'tab_object_event_actio...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:tab_object_event_actions.sql:15: NOTICE:  CREATE TABLE will create implicit sequence "object_event_actions_id_seq" for serial column "object_event_actions.id"
+psql:tab_object_event_actions.sql:15: NOTICE:  CREATE TABLE / PRIMARY KEY will create implicit index "object_event_actions_pkey" for table "object_event_actions"
+psql:tab_object_event_actions.sql:28: ERROR:  function rlm.component_registered(unknown, unknown) does not exist
+LINE 1: select rlm.component_registered('WKF', 'tab_object_event_act...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:tab_object_events_register.sql:3: ERROR:  function rlm.register_component(unknown, unknown) does not exist
+LINE 1: select rlm.register_component('WKF', 'tab_object_events_regi...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:tab_object_events_register.sql:22: ERROR:  function rlm.component_registered(unknown, unknown) does not exist
+LINE 1: select rlm.component_registered('WKF', 'tab_object_events_re...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:idx_object_event_types.sql:3: ERROR:  function rlm.register_component(unknown, unknown) does not exist
+LINE 1: select rlm.register_component ('WKF', 'idx_object_event_type...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:idx_object_event_types.sql:9: ERROR:  function rlm.component_registered(unknown, unknown) does not exist
+LINE 1: select rlm.component_registered('CIN', 'idx_object_event_typ...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:fnc_register_object_event.sql:3: ERROR:  function rlm.register_component(unknown, unknown) does not exist
+LINE 1: select rlm.register_component('WKF', 'fnc_register_object_ev...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:fnc_register_object_event.sql:40: ERROR:  syntax error at or near "wkf"
+LINE 1: comment on function function wkf.register_object_event
+                                     ^
+psql:fnc_register_object_event.sql:42: ERROR:  function rlm.component_registered(unknown, unknown) does not exist
+LINE 1: select rlm.component_registered('WKF', 'fnc_register_object_...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:wkf.sql:43: ERROR:  function rlm.component_registered(unknown, unknown) does not exist
+LINE 1: select rlm.component_registered('WKF', 'wkf.sql');
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+psql:install.sql:69: ERROR:  relation "vw_db_releases" does not exist
+LINE 1: select * from vw_db_releases where id = (select max(id) from...
+                      ^
+psql:install.sql:71: ERROR:  relation "vw_db_release_components" does not exist
+LINE 1: select * from vw_db_release_components where db_release_id =...
+                      ^
+cromby_development=> \q
+]0;pip@hollis-henry: ~/prj/CrombyDBpip@hollis-henry:~/prj/CrombyDB$ exit
+exit
+
+Script done on Thu 15 Nov 2012 20:26:45 GMT

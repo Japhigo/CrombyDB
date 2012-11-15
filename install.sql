@@ -36,39 +36,39 @@ values
 
 \qecho Installing components...
 
-\cd rlm
-\i rlm.sql
+--\cd rlm
+--\i rlm.sql
 
-\cd ..
-\cd wkf
-\i wkf.sql
+--\cd ..
+--\cd wkf
+--\i wkf.sql
 
-\cd ..
-\cd cin
-\i cin.sql
+--\cd ..
+--\cd cin
+--\i cin.sql
 
-\cd ..
-\cd sec
-\i sec.sql
+--\cd ..
+--\cd sec
+--\i sec.sql
 
-\cd ..
-\cd public
-\i public.sql
+--\cd ..
+--\cd public
+--\i public.sql
 
 \cd ..
 \qecho Components installed
 
 \qecho Cleaning up
 
-drop table if exists tmp_release_details;
+--drop table if exists tmp_release_details;
 	
-select rlm.mark_release_complete();
+--select rlm.mark_release_complete();
 
 \qecho displaying installed components
 
-select * from vw_db_releases where id = (select max(id) from vw_db_releases);
+--select * from vw_db_releases where id = (select max(id) from vw_db_releases);
 
-select * from vw_db_release_components where db_release_id = (select max(id) from vw_db_releases) order by start_date_time;
+--select * from vw_db_release_components where db_release_id = (select max(id) from vw_db_releases) order by start_date_time;
 
 \qecho Install finished
 

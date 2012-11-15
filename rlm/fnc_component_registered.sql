@@ -15,9 +15,9 @@ as $$
       ,p_type        varchar(3)
       ,p_release_id  int)
     is
-      select id
+      select drc.id
         from rlm.db_release_components drc join
-             rlm.db_component_areas dca using dca.id = drc.db_component_area_id
+             rlm.db_component_areas dca on dca.id = drc.db_component_area_id
        where drc.db_release_id = p_release_id 
          and drc.component_name = p_name
          and dca.component_area_code = p_type

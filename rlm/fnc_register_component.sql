@@ -21,7 +21,7 @@ as $$
       (p_type  varchar(3))
     for
       select id
-        from db_component_areas
+        from rlm.db_component_areas
        where component_area_code = p_type;
 
   begin
@@ -32,7 +32,7 @@ as $$
 
     open c_dca(p_component_type_code);
     fetch c_dca into v_db_component_area_id;
-    close c_dta;
+    close c_dca;
 
     insert into rlm.db_release_components
       (db_release_id
